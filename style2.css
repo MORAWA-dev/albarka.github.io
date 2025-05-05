@@ -83,4 +83,69 @@ body {
   ul li strong {
     color: #00ffcc;
   }
+/* Mobile phones (max width 600px) */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  header h2 {
+    font-size: 1em;
+  }
+
+  nav a {
+    display: block;
+    margin: 8px 0;
+    font-size: 1em;
+  }
+
+  .round-profile {
+    width: 90px;
+    height: 90px;
+  }
+
+  section h3 {
+    font-size: 1.2em;
+  }
+
+  ul {
+    padding-left: 0;
+    font-size: 0.95em;
+  }
+}
+
+/* Tablets (601px to 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  nav a {
+    margin: 0 8px;
+  }
+
+  .round-profile {
+    width: 100px;
+    height: 100px;
+  }
+
+  section h3 {
+    font-size: 1.4em;
+  }
+
+  ul {
+    font-size: 1em;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+ul li {
+  margin-bottom: 6px;
+}
+
       

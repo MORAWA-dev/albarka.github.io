@@ -124,14 +124,11 @@
   </div>
   <button id="scrollTop" title="Back to Top">↑</button>
 <script>
+  // Scroll to top button logic
   const scrollTopButton = document.getElementById("scrollTop");
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      scrollTopButton.style.display = "block";
-    } else {
-      scrollTopButton.style.display = "none";
-    }
+    scrollTopButton.style.display = window.scrollY > 300 ? "block" : "none";
   });
 
   scrollTopButton.addEventListener("click", () => {
@@ -140,18 +137,21 @@
       behavior: "smooth"
     });
   });
-const burger = document.getElementById("burger");
-const nav = document.getElementById("nav-links");
 
-burger.addEventListener("click", () => {
-  nav.classList.toggle("active");
-});
-  <script>
+  // Burger menu toggle
+  const burger = document.getElementById("burger");
+  const nav = document.getElementById("nav-links");
+
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+
+  // Dark/Light theme toggle
   const toggleBtn = document.getElementById("theme-toggle");
 
   toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("light-theme");
-    // Optional: save theme preference
+
     if (document.body.classList.contains("light-theme")) {
       localStorage.setItem("theme", "light");
     } else {
@@ -159,16 +159,15 @@ burger.addEventListener("click", () => {
     }
   });
 
-  // On page load: check preference
+  // On page load: apply saved theme preference
   window.addEventListener("DOMContentLoaded", () => {
-    if (localStorage.getItem("theme") === "light") {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
       document.body.classList.add("light-theme");
     }
   });
 </script>
 
-
-</script>
 
 </body>
 </html>

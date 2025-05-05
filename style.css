@@ -159,4 +159,22 @@ footer {
 * {
   box-sizing: border-box;
 }
+.bio {
+  max-width: 700px;
+  line-height: 1.6;
+}
+#scrollTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  background-color: #00ffaa;
+  color: #111;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+}
+
 

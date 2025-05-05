@@ -148,4 +148,8 @@ ul li {
   margin-bottom: 6px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
       

@@ -34,6 +34,10 @@ nav a {
   color: #00ff99;
   text-decoration: none;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 .profile {
   display: flex;

@@ -311,6 +311,23 @@ footer {
   text-align: right;
 }
 
+.about-list li:hover {
+  transform: translateX(5px);
+  transition: transform 0.2s ease;
+}
+.about-list li {
+  font-size: 1.1em;
+}
+
+.about-list li::first-letter {
+  font-size: 1.3em;
+}
+.about-list li {
+  border-bottom: 1px dashed #444;
+  padding: 6px 0;
+}
+
+
 
 
 

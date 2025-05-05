@@ -89,3 +89,70 @@ footer {
 .socials img:hover {
   transform: rotate(360deg);
 }
+
+/* Mobile devices (phones, less than 600px) */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  header h2 {
+    font-size: 1em;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile img {
+    width: 180px;
+  }
+
+  .bio {
+    width: 100%;
+  }
+
+  .about-list {
+    font-size: 1em;
+  }
+
+  .socials img {
+    width: 32px;
+    margin: 0 0.2em;
+  }
+}
+
+/* Tablets (between 600px and 900px) */
+@media (max-width: 900px) and (min-width: 601px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile img {
+    width: 200px;
+  }
+
+  .bio {
+    text-align: center;
+  }
+
+  nav a {
+    margin: 0 10px;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+

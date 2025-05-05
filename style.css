@@ -2,6 +2,13 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+@media (max-width: 600px) {
+  .profile img {
+    width: 160px;
+    max-width: 100%;
+    height: auto;
+  }
+}
 
 
 
@@ -189,5 +196,37 @@ footer {
 #scrollTop:hover {
   background-color: #00cc88;
 }
+
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  margin: 10px auto;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background: #00ffaa;
+}
+
+@media (max-width: 600px) {
+  .burger {
+    display: flex;
+  }
+
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  #nav-links.active {
+    display: flex;
+  }
+}
+
 
 

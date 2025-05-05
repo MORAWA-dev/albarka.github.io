@@ -35,6 +35,53 @@ header h2 {
   font-weight: normal;
   margin-top: 0;
 }
+/* Default dark theme (already your base styles) */
+body {
+  background-color: #1f1f1f;
+  color: #eee;
+}
+
+/* Toggle button style */
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 2px solid #00ffaa;
+  color: #00ffaa;
+  padding: 6px 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Light theme override */
+body.light-theme {
+  background-color: #ffffff;
+  color: #222;
+}
+
+body.light-theme a {
+  color: #0077cc;
+}
+
+body.light-theme .quote {
+  background-color: #f0f0f0;
+  color: #333;
+  border-left-color: #0077cc;
+  box-shadow: none;
+}
+
+body.light-theme .about-title {
+  color: #0077cc;
+  text-shadow: none;
+}
+
+body.light-theme #theme-toggle {
+  color: #0077cc;
+  border-color: #0077cc;
+}
+
 
 
 nav a {

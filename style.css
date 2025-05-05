@@ -359,6 +359,37 @@ body.light-theme .rotating-quote .quote-author {
   color: #777;
 }
 
+.engagement-section {
+  margin: 40px 0;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.like-section,
+.comment-section {
+  margin-bottom: 20px;
+}
+
+#like-button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+#like-count {
+  margin-top: 10px;
+}
+
+.comment-section textarea {
+  width: 100%;
+  padding: 10px;
+  font-family: inherit;
+}
+
+.comment-section button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
 
 
 

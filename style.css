@@ -326,6 +326,38 @@ footer {
   border-bottom: 1px dashed #444;
   padding: 6px 0;
 }
+.rotating-quote {
+  font-style: italic;
+  color: #00ffaa;
+  border-left: 4px solid #00ffaa;
+  padding: 15px 25px;
+  margin: 40px auto;
+  max-width: 800px;
+  background-color: #2a2a2a;
+  box-shadow: 0 0 10px #00ffaa55;
+  transition: all 0.4s ease-in-out;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.rotating-quote .quote-author {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #ccc;
+  text-align: right;
+}
+
+body.light-theme .rotating-quote {
+  background-color: #f0f0f0;
+  color: #333;
+  border-left-color: #0077cc;
+  box-shadow: none;
+}
+
+body.light-theme .rotating-quote .quote-author {
+  color: #777;
+}
 
 
 

@@ -33,6 +33,8 @@
 
 </head>
 <body>
+  <button id="theme-toggle" title="Switch theme">🌗</button>
+
   <div class="container">
     <header>
       <h1>Ibrahim KABORE</h1>
@@ -144,6 +146,27 @@ const nav = document.getElementById("nav-links");
 burger.addEventListener("click", () => {
   nav.classList.toggle("active");
 });
+  <script>
+  const toggleBtn = document.getElementById("theme-toggle");
+
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light-theme");
+    // Optional: save theme preference
+    if (document.body.classList.contains("light-theme")) {
+      localStorage.setItem("theme", "light");
+    } else {
+      localStorage.setItem("theme", "dark");
+    }
+  });
+
+  // On page load: check preference
+  window.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("theme") === "light") {
+      document.body.classList.add("light-theme");
+    }
+  });
+</script>
+
 
 </script>
 

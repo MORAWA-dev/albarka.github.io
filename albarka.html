@@ -131,5 +131,22 @@
       <p>© @beingalbarka 2025 | Albarka Page</p>
     </footer>
   </div>
+  <script>
+  const blessingQuote = document.querySelector('.blessing-quote');
+
+  function revealOnScroll() {
+    const rect = blessingQuote.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight - 100;
+
+    if (isVisible) {
+      blessingQuote.classList.add('visible');
+      window.removeEventListener('scroll', revealOnScroll); // Trigger only once
+    }
+  }
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('DOMContentLoaded', revealOnScroll);
+</script>
+
 </body>
 </html>

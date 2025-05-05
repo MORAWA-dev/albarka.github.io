@@ -12,18 +12,44 @@
   <title>Ibrahim Kabore</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="assets/photo.jpg" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ibrahim Kabore",
+  "url": "https://albarka.github.io",
+  "sameAs": [
+    "https://www.linkedin.com/in/ibrahimkabore/",
+    "https://github.com/MORAWA-dev"
+  ],
+  "jobTitle": "Master Student in Geomatics",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "UM6P"
+  }
+}
+</script>
+
 </head>
 <body>
   <div class="container">
     <header>
       <h1>Ibrahim KABORE</h1>
       <h2>Master Student in Geomatics, Remote Sensing, and GIS</h2>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="https://docs.google.com/document/d/1VG5TWbQsa7yIJUPrOkfy5_3NcM1TWRCxSSmHoj0F3zc/edit?usp=sharing" target="_blank">CV</a>
-        <a href="https://scholar.google.com/citations?hl=en&user=KD0o82oAAAAJ" target="_blank">Publications</a>
-        <a href="albarka.html">Albarka</a>
-      </nav>
+      <div class="nav-container">
+  <div class="burger" id="burger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <nav id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="...">CV</a>
+    <a href="...">Publications</a>
+    <a href="albarka.html">Albarka</a>
+  </nav>
+</div>
+
     </header>
 
     <main>
@@ -105,6 +131,13 @@
       behavior: "smooth"
     });
   });
+const burger = document.getElementById("burger");
+const nav = document.getElementById("nav-links");
+
+burger.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+
 </script>
 
 </body>

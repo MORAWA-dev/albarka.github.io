@@ -249,6 +249,26 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+.stay-hungry {
+  font-style: italic;
+  color: #00ffaa;
+  border-left: 4px solid #00ffaa;
+  padding: 15px 25px;
+  margin: 40px 0;
+  background-color: #1e1e1e;
+  box-shadow: 0 0 10px #00ffaa55;
+  font-size: 1.2em;
+  line-height: 1.6;
+  animation: fadeInQuote 1.2s ease-in-out;
+}
+
+.stay-hungry cite {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #aaa;
+  text-align: right;
+}
 
 
 

@@ -218,5 +218,27 @@ html {
   text-align: right;
 }
 
+.roberto-quote {
+  font-style: italic;
+  color: #ffcc00;
+  border-left: 4px solid #ffcc00;
+  padding: 15px 25px;
+  margin: 40px 0;
+  background-color: #2a2a2a;
+  box-shadow: 0 0 10px #ffcc0055;
+  animation: fadeInQuote 1s ease-in-out;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.roberto-quote cite {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #ddd;
+  text-align: right;
+}
+
+
 
       

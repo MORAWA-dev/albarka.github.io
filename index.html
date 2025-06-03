@@ -48,6 +48,16 @@ document.getElementById('comment-form').addEventListener('submit', (e) => {
     document.getElementById('comment-text').value = '';
   }
 });
+const socials = document.querySelector('.socials');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      socials.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+
+observer.observe(document.querySelector('footer'));
 </script>
   <style>
     .quote-text, .quote-author {
@@ -65,7 +75,229 @@ document.getElementById('comment-form').addEventListener('submit', (e) => {
       font-style: italic;
       color: #777;
     }
-  </style>
+    .socials a img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .socials a:hover img {
+    transform: scale(1.15);
+    box-shadow: 0 4px 10px rgba(0, 255, 170, 0.4);
+  }
+
+  body.light-theme .socials a:hover img {
+    box-shadow: 0 4px 10px rgba(0, 119, 204, 0.4);
+  }
+  .socials {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .socials.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .socials a img {
+    filter: grayscale(100%) brightness(1.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  }
+
+  .socials a:hover img {
+    transform: scale(1.2);
+    filter: none;
+    box-shadow: 0 0 10px rgba(0, 255, 170, 0.6);
+  }
+
+  body.light-theme .socials a:hover img {
+    box-shadow: 0 0 10px rgba(0, 119, 204, 0.6);
+  }
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+  header h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  header h2 {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .profile img {
+    width: 160px;
+    height: auto;
+  }
+  .bio {
+    width: 100%;
+    max-width: 100%;
+  }
+  .quote-text, .quote-author {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+  .socials {
+    left: 0;
+    bottom: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 8px;
+    justify-content: center;
+  }
+  .socials a {
+    margin: 5px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile img {
+    width: 200px;
+  }
+  .bio {
+    max-width: 90%;
+    text-align: center;
+  }
+  .socials {
+    left: 10px;
+    bottom: 10px;
+  }
+}
+  .quote.rotating-quote {
+    position: relative;
+    background-color: #1e1e1e;
+    border-left: 5px solid #00ffaa;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 255, 170, 0.2);
+    padding: 1.5rem 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    color: #00ffaa;
+    font-style: italic;
+    font-size: 1.2rem;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .quote.rotating-quote:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.5);
+  }
+
+  .quote-text {
+    position: relative;
+    padding: 0 1rem;
+    font-weight: 500;
+    font-size: 1.3rem;
+  }
+
+  .quote-text::before {
+    content: '“';
+    font-size: 2.5rem;
+    position: absolute;
+    left: -1rem;
+    top: -0.5rem;
+    color: #00ffaa;
+  }
+
+  .quote-text::after {
+    content: '”';
+    font-size: 2.5rem;
+    position: absolute;
+    right: -1rem;
+    bottom: -0.5rem;
+    color: #00ffaa;
+  }
+
+  .quote-author {
+    display: block;
+    margin-top: 1rem;
+    text-align: right;
+    font-size: 1rem;
+    color: #ccc;
+    font-style: italic;
+  }
+  .quote {
+    position: relative;
+    background-color: #1e1e1e;
+    border-left: 5px solid #00ffaa;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 255, 170, 0.2);
+    padding: 1.5rem 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    color: #00ffaa;
+    font-style: italic;
+    font-size: 1.2rem;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .quote:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.5);
+  }
+
+  .quote::before {
+    content: '“';
+    font-size: 2.5rem;
+    position: absolute;
+    left: 1rem;
+    top: 0.2rem;
+    color: #00ffaa;
+    animation: fadeInQuote 0.6s ease-out;
+  }
+
+  .quote::after {
+    content: '”';
+    font-size: 2.5rem;
+    position: absolute;
+    right: 1rem;
+    bottom: 0.2rem;
+    color: #00ffaa;
+    animation: fadeInQuote 0.6s ease-out;
+  }
+
+  .quote cite {
+    display: block;
+    margin-top: 1rem;
+    text-align: right;
+    font-size: 1rem;
+    color: #ccc;
+    font-style: italic;
+  }
+
+  body.light-theme .quote {
+    background-color: #f9f9f9;
+    color: #0077cc;
+    border-left-color: #0077cc;
+    box-shadow: 0 0 10px rgba(0, 119, 204, 0.15);
+  }
+
+  body.light-theme .quote::before,
+  body.light-theme .quote::after {
+    color: #0077cc;
+  }
+
+  @keyframes fadeInQuote {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
 </head>
 <body>
   <button id="theme-toggle" aria-label="Toggle light/dark mode" title="Switch theme">🌗</button>
@@ -153,7 +385,33 @@ document.getElementById('comment-form').addEventListener('submit', (e) => {
 
     <footer>
       <p>© @beingalbarka 2025 | Last updated on June 2025</p>
-    </footer>
+    <div class="socials">
+  <a href="mailto:ibrakabore01@gmail.com" aria-label="Email Ibrahim" title="Email" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.icons8.com/fluency/48/mail.png" alt="Email"/>
+  </a>
+  <a href="https://github.com/MORAWA-dev" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.icons8.com/ios-glyphs/48/github.png" alt="GitHub"/>
+  </a>
+  <a href="https://www.linkedin.com/in/ibrahimkabore/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn"/>
+  </a>
+  <a href="https://www.researchgate.net/profile/Ibrahim-Kabore-4?ev=hdr_xprf" aria-label="ResearchGate" title="ResearchGate" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.icons8.com/windows/48/researchgate.png" alt="ResearchGate"/>
+  </a>
+  <a href="https://orcid.org/0009-0006-1008-5628" aria-label="ORCID" title="ORCID" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.icons8.com/windows/48/orcid.png" alt="ORCID"/>
+  </a>
+  <a href="https://x.com/albarka007?s=09" aria-label="Twitter X" title="Twitter (X)" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.icons8.com/ios-filled/48/x.png" alt="Twitter X"/>
+  </a>
+  <a href="https://www.instagram.com/beingalbarka/" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram"/>
+  </a>
+  <a href="https://youtube.com/@geomatics101k?si=QFQUwPMZ1rRzy-Zg" aria-label="YouTube" title="YouTube" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube"/>
+  </a>
+</div>
+</footer>
   </div>
 
   <script>

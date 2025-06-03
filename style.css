@@ -1,4 +1,4 @@
-/* Improved and optimized CSS for Ibrahim Kabore's personal website */
+/* Final responsive stylesheet for Ibrahim Kabore's website with social, quote, and light/dark support */
 
 :root {
   --primary-color: #00ffaa;
@@ -14,14 +14,14 @@
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--dark-bg);
   color: var(--text-dark);
-  margin: 0;
-  padding: 0;
 }
 
 body.light-theme {
@@ -79,16 +79,11 @@ a {
 .about-list li {
   border-bottom: 1px dashed #444;
   padding: 6px 0;
-  font-size: 1.1em;
   transition: transform 0.2s ease;
 }
 
 .about-list li:hover {
   transform: translateX(5px);
-}
-
-.about-list li::first-letter {
-  font-size: 1.3em;
 }
 
 .profile {
@@ -116,188 +111,106 @@ footer {
   font-size: 0.9em;
 }
 
-.socials img {
-  width: 40px;
-  margin: 0 0.4em;
-  transition: transform 0.5s ease;
-}
-
-.socials img:hover {
-  transform: rotate(360deg);
-}
-
-#theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: transparent;
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  padding: 6px 10px;
-  font-size: 1.2em;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-body.light-theme a,
-body.light-theme .about-title,
-body.light-theme #theme-toggle {
-  color: var(--accent-color);
-}
-
-body.light-theme #theme-toggle,
-body.light-theme .about-title {
-  border-color: var(--accent-color);
-  text-shadow: none;
-}
-
-#scrollTop {
+/* Socials */
+.socials {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  display: none;
-  background-color: var(--primary-color);
-  color: #111;
-  border: none;
-  padding: 12px 16px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 18px;
-  box-shadow: 0 0 10px #00ffaa66;
-  transition: background-color 0.3s ease;
-}
-
-#scrollTop:hover {
-  background-color: #00cc88;
-}
-
-.burger {
-  display: none;
-  cursor: pointer;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
   flex-direction: column;
-  gap: 5px;
-  margin: 10px auto;
+  gap: 10px;
 }
 
-.burger div {
-  width: 25px;
-  height: 3px;
-  background: var(--primary-color);
+.socials a img {
+  width: 40px;
+  filter: grayscale(100%) brightness(1.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
-@media (max-width: 600px) {
-  .container {
-    padding: 10px;
-  }
-
-  header h1 {
-    font-size: 2em;
-  }
-
-  header h2 {
-    font-size: 1em;
-  }
-
-  nav a {
-    display: block;
-    margin: 10px 0;
-  }
-
-  .profile {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .profile img {
-    width: 180px;
-  }
-
-  .bio {
-    width: 100%;
-  }
-
-  .about-list {
-    font-size: 1em;
-  }
-
-  .socials img {
-    width: 32px;
-    margin: 0 0.2em;
-  }
-
-  .burger {
-    display: flex;
-  }
-
-  #nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  #nav-links.active {
-    display: flex;
-  }
+.socials a:hover img {
+  transform: scale(1.2);
+  filter: none;
+  box-shadow: 0 0 10px rgba(0, 255, 170, 0.6);
 }
 
-@media (max-width: 900px) and (min-width: 601px) {
-  .profile {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .profile img {
-    width: 200px;
-  }
-
-  .bio {
-    text-align: center;
-  }
-
-  nav a {
-    margin: 0 10px;
-  }
+body.light-theme .socials a:hover img {
+  box-shadow: 0 0 10px rgba(0, 119, 204, 0.6);
 }
 
+/* Quote Block Styling */
 .quote, .rotating-quote {
-  font-style: italic;
+  position: relative;
+  background-color: #1e1e1e;
+  border-left: 5px solid var(--primary-color);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 170, 0.2);
+  padding: 1.5rem 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
   color: var(--primary-color);
-  border-left: 4px solid var(--primary-color);
-  padding: 15px 25px;
-  margin: 40px auto;
-  background-color: #2a2a2a;
-  box-shadow: var(--shadow);
-  max-width: 800px;
-  line-height: 1.6;
-  white-space: normal;
-  overflow: visible;
+  font-style: italic;
+  font-size: 1.2rem;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.quote:hover, .rotating-quote:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 170, 0.5);
+}
+
+.quote::before, .rotating-quote .quote-text::before {
+  content: '“';
+  font-size: 2.5rem;
+  position: absolute;
+  left: 1rem;
+  top: 0.2rem;
+  color: var(--primary-color);
+  animation: fadeInQuote 0.6s ease-out;
+}
+
+.quote::after, .rotating-quote .quote-text::after {
+  content: '”';
+  font-size: 2.5rem;
+  position: absolute;
+  right: 1rem;
+  bottom: 0.2rem;
+  color: var(--primary-color);
+  animation: fadeInQuote 0.6s ease-out;
 }
 
 .quote cite, .rotating-quote .quote-author {
   display: block;
-  margin-top: 10px;
-  font-size: 0.9em;
-  color: #ccc;
+  margin-top: 1rem;
   text-align: right;
-  white-space: normal;
-  overflow: visible;
+  font-size: 1rem;
+  color: #ccc;
+  font-style: italic;
 }
 
 body.light-theme .quote,
 body.light-theme .rotating-quote {
-  background-color: #f0f0f0;
-  color: #333;
-  border-left-color: var(--accent-color);
-  box-shadow: none;
+  background-color: #f9f9f9;
+  color: #0077cc;
+  border-left-color: #0077cc;
+  box-shadow: 0 0 10px rgba(0, 119, 204, 0.15);
 }
 
-body.light-theme .quote cite,
-body.light-theme .rotating-quote .quote-author {
-  color: #777;
+body.light-theme .quote::before,
+body.light-theme .quote::after,
+body.light-theme .rotating-quote .quote-text::before,
+body.light-theme .rotating-quote .quote-text::after {
+  color: #0077cc;
 }
 
+@keyframes fadeInQuote {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Engagement section */
 .engagement-section {
   margin: 40px 0;
   padding: 20px;
@@ -328,4 +241,114 @@ body.light-theme .rotating-quote .quote-author {
   margin-top: 10px;
   padding: 8px 16px;
   cursor: pointer;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 6px 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+body.light-theme a,
+body.light-theme .about-title,
+body.light-theme #theme-toggle {
+  color: var(--accent-color);
+}
+
+body.light-theme #theme-toggle,
+body.light-theme .about-title {
+  border-color: var(--accent-color);
+  text-shadow: none;
+}
+
+/* Scroll-to-top Button */
+#scrollTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  background-color: var(--primary-color);
+  color: #111;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 0 10px #00ffaa66;
+  transition: background-color 0.3s ease;
+}
+
+#scrollTop:hover {
+  background-color: #00cc88;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+  header h1 {
+    font-size: 2em;
+  }
+  header h2 {
+    font-size: 1em;
+  }
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .profile img {
+    width: 180px;
+  }
+  .bio {
+    width: 100%;
+  }
+  .about-list {
+    font-size: 1em;
+  }
+  .socials {
+    left: 0;
+    bottom: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 8px;
+    justify-content: center;
+  }
+  .socials a {
+    margin: 5px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile img {
+    width: 200px;
+  }
+  .bio {
+    max-width: 90%;
+    text-align: center;
+  }
+  nav a {
+    margin: 0 10px;
+  }
+  .socials {
+    left: 10px;
+    bottom: 10px;
+  }
 }

@@ -271,6 +271,8 @@ body.light-theme .about-title {
   box-shadow: var(--shadow);
   max-width: 800px;
   line-height: 1.6;
+  white-space: normal;
+  overflow: visible;
 }
 
 .quote cite, .rotating-quote .quote-author {
@@ -279,6 +281,8 @@ body.light-theme .about-title {
   font-size: 0.9em;
   color: #ccc;
   text-align: right;
+  white-space: normal;
+  overflow: visible;
 }
 
 body.light-theme .quote,

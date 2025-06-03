@@ -35,6 +35,39 @@
   }
   </script>
 <style>
+  .quote.rotating-quote::before {
+    content: "🧠";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    font-size: 2rem;
+  }
+
+  .quote-text, .quote-author {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0.5rem auto;
+    line-height: 1.6;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.15em solid #aaa;
+    animation: typewriter 3.5s steps(40, end) 0.5s 1 normal both, caret 0.75s step-end infinite;
+  }
+
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes caret {
+    50% { border-color: transparent; }
+  }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   body.light-theme .quote.rotating-quote {
     background: #ffffff;
     border-left-color: #ddd;
@@ -253,7 +286,7 @@
     quoteAuthor.style.opacity = 0;
     setTimeout(() => {
       const quote = quotes[quoteIndex];
-      quoteText.textContent = `"${quote.text}"`;
+      quoteText.textContent = quote.text.replaceAll('"', '');
       quoteAuthor.textContent = `— ${quote.author}`;
       quoteText.style.opacity = 1;
       quoteAuthor.style.opacity = 1;

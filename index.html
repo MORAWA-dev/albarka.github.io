@@ -34,6 +34,54 @@
     }
   }
   </script>
+<style>
+  body.light-theme .quote.rotating-quote {
+    background: #ffffff;
+    border-left-color: #ddd;
+  }
+
+  body:not(.light-theme) .quote.rotating-quote {
+    background: #1e1e1e;
+    border-left-color: #555;
+    color: #f0f0f0;
+  }
+  .quote.rotating-quote {
+    background: #f9f9f9;
+    border-left: 5px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    max-width: 700px;
+    margin: 2rem auto;
+    position: relative;
+  }
+  .quote-text::before {
+    content: "“";
+    font-size: 2rem;
+    vertical-align: top;
+    color: #aaa;
+  }
+
+  .quote-text::after {
+    content: "”";
+    font-size: 2rem;
+    vertical-align: bottom;
+    color: #aaa;
+  }
+
+  .quote-text, .quote-author {
+    display: block;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+    font-size: 1.2rem;
+    margin: 0.5rem auto;
+    line-height: 1.6;
+  }
+  .quote-author {
+    font-style: italic;
+    color: #777;
+  }
+</style>
 </head>
 <body>
   <button id="theme-toggle" aria-label="Toggle light/dark mode" title="Switch theme">🌗</button>
@@ -156,5 +204,67 @@
   <button id="scrollTop" title="Back to Top" aria-label="Back to top">↑</button>
 
   <script src="script.js"></script>
+<script>
+  const quotes = [
+    
+    { text: "Stay hungry, stay foolish.", author: "Steve Jobs" },
+    {text: "Innovation distinguishes between a leader and a follower.", author: "Steve Jobs" },
+    { text: "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work.", author: "Steve Jobs" },
+    { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+    { text: "My job is not to be easy on people. My job is to take these great people we have and to push them and make them even better.", author: "Steve Jobs" },
+    { text: "It’s not about money. It’s about the people you have, how you’re led, and how much you get it.", author: "Steve Jobs" },
+    { text: "I’m convinced that about half of what separates the successful entrepreneurs from the non-successful ones is pure perseverance.", author: "Steve Jobs" },
+    { text: "Sometimes life hits you in the head with a brick. Don’t lose faith.", author: "Steve Jobs" },
+    { text: "I want to put a ding in the universe.", author: "Steve Jobs" },
+    { text: "Remembering that you are going to die is the best way I know to avoid the trap of thinking you have something to lose.", author: "Steve Jobs" },
+    { text: "Your time is limited, so don’t waste it living someone else’s life.", author: "Steve Jobs" },
+    { text: "Don’t be trapped by dogma – which is living with the results of other people’s thinking.", author: "Steve Jobs" },
+    { text: "Have the courage to follow your heart and intuition. They somehow already know what you truly want to become.", author: "Steve Jobs" },
+    { text: "Creativity is just connecting things.", author: "Steve Jobs" },
+    { text: "I’m as proud of what we don’t do as I am of what we do.", author: "Steve Jobs" },
+    { text: "Quality is more important than quantity. One home run is much better than two doubles.", author: "Steve Jobs" },
+    { text: "Innovation comes from saying no to a thousand things.", author: "Steve Jobs" },
+    { text: "The people who are crazy enough to think they can change the world are the ones who do.", author: "Steve Jobs" },
+    { text: "Be a yardstick of quality. Some people aren’t used to an environment where excellence is expected.", author: "Steve Jobs" },
+    { text: "Details matter, it’s worth waiting to get it right.", author: "Steve Jobs" },
+    { text: "Everything around you that you call life was made up by people that were no smarter than you. And you can change it.", author: "Steve Jobs" },
+    { text: "You have the opportunity to sit with the greatest minds who ever lived — through their words, their work, and their stories.", author: "Inspired by Steve Jobs" },
+    { text: "It always seems impossible until it is done.", author: "Nelson Mandela" },
+    { text: "Success is not final, failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
+    { text: "The best way to predict the future is to invent it.", author: "Alan Kay" },
+    { text: "Do not wait to strike till the iron is hot, but make it hot by striking.", author: "William Butler Yeats" },
+    { text: "The only limit to our realization of tomorrow is our doubts of today.", author: "Franklin D. Roosevelt" },
+    { text: "Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.", author: "Albert Einstein" },
+    { text: "Strive not to be a success, but rather to be of value.", author: "Albert Einstein" },
+    { text: "Whether you think you can or you think you can’t, you’re right.", author: "Henry Ford" },
+    { text: "In the middle of difficulty lies opportunity.", author: "Albert Einstein" },
+    { text: "I have not failed. I've just found 10,000 ways that won't work.", author: "Thomas Edison" },
+    { text: "The mind is everything. What you think you become.", author: "Buddha" },
+    { text: "The only way to learn mathematics is to do mathematics.", author: "Paul Halmos" },
+    { text: "Simplicity is the ultimate sophistication.", author: "Leonardo da Vinci" }
+  ];
+
+  let quoteIndex = 0;
+  const quoteText = document.querySelector('.quote-text');
+  const quoteAuthor = document.querySelector('.quote-author');
+
+  function rotateQuote() {
+    quoteText.style.opacity = 0;
+    quoteAuthor.style.opacity = 0;
+    setTimeout(() => {
+      const quote = quotes[quoteIndex];
+      quoteText.textContent = `"${quote.text}"`;
+      quoteAuthor.textContent = `— ${quote.author}`;
+      quoteText.style.opacity = 1;
+      quoteAuthor.style.opacity = 1;
+      quoteIndex = (quoteIndex + 1) % quotes.length;
+    }, 400);
+  }
+
+    // Show a different quote every visit
+  quoteIndex = Math.floor(Math.random() * quotes.length);
+  rotateQuote();
+  setInterval(rotateQuote, 13000);
+</script>
 </body>
 </html>

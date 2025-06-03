@@ -48,16 +48,7 @@ document.getElementById('comment-form').addEventListener('submit', (e) => {
     document.getElementById('comment-text').value = '';
   }
 });
-const socials = document.querySelector('.socials');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      socials.classList.add('visible');
-    }
-  });
-}, { threshold: 0.2 });
-
-observer.observe(document.querySelector('footer'));
+document.querySelector('.socials').classList.add('visible');
 </script>
   <style>
     .quote-text, .quote-author {

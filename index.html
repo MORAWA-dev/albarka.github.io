@@ -255,30 +255,6 @@
 
   rotateQuote();
   setInterval(rotateQuote, 13000);
-// Like Button Logic
-let likeCount = 0;
-const likeButton = document.getElementById('like-button');
-const likeCountElement = document.getElementById('like-count');
-
-likeButton.addEventListener('click', () => {
-  likeCount++;
-  likeCountElement.textContent = `Likes: ${likeCount}`;
-});
-
-// Comment Submission Logic
-document.getElementById('comment-form').addEventListener('submit', function (e) {
-  e.preventDefault();
-  const commentText = document.getElementById('comment-text').value;
-  
-  if (commentText.trim()) {
-    const commentList = document.getElementById('comments-list');
-    const newComment = document.createElement('li');
-    newComment.textContent = commentText;
-    commentList.appendChild(newComment);
-    document.getElementById('comment-text').value = '';
-  }
-});
-
 
     
 </script>

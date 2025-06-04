@@ -1,305 +1,211 @@
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #1f1f1f;
-  color: #eee;
-  line-height: 1.7;
-  font-size: 16px;
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.container {
-  max-width: 960px;
-  margin: auto;
-  padding: 20px;
-}
-
-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-header h1 {
-  font-size: 2.8em;
-  color: white;
-  margin-bottom: 0.3em;
-  letter-spacing: 1px;
-}
-
-header h2 {
-  color: #ccc;
-  font-weight: normal;
-  margin-top: 0;
-}
-
-nav a {
-  margin: 0 15px;
-  color: #00ff99;
-  text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-.profile {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.profile img {
-  width: 240px;
-  border-radius: 50%;
-  border: 4px solid #444;
-}
-
-.bio {
-  flex: 1;
-  max-width: 700px;
-  line-height: 1.6;
-}
-
-a {
-  color: #50fa7b;
-  text-decoration: underline;
-}
-
-.about-title {
-  font-size: 1.5em;
-  color: #00ffaa;
-  margin-top: 1em;
-  text-shadow: 0 0 5px #50fa7b;
-}
-
-.about-list {
-  list-style: none;
-  padding-left: 0;
-  font-size: 1.1em;
-}
-
-.about-list li {
-  margin-bottom: 8px;
-  font-size: 1.1em;
-  border-bottom: 1px dashed #444;
-  padding: 6px 0;
-}
-
-.about-list li:hover {
-  transform: translateX(5px);
-  transition: transform 0.2s ease;
-}
-
-.about-list li::first-letter {
-  font-size: 1.3em;
-}
-
-footer {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 0.9em;
-}
-
-.socials img {
-  width: 40px;
-  margin: 0 0.4em;
-  transition: transform 0.5s ease;
-}
-
-.socials img:hover {
-  transform: rotate(360deg);
-}
-
-#scrollTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  display: none;
-  background-color: #00ffaa;
-  color: #111;
-  border: none;
-  padding: 12px 16px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 18px;
-  box-shadow: 0 0 10px #00ffaa66;
-  transition: background-color 0.3s ease;
-}
-
-#scrollTop:hover {
-  background-color: #00cc88;
-}
-
-#theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: transparent;
-  border: 2px solid #00ffaa;
-  color: #00ffaa;
-  padding: 6px 10px;
-  font-size: 1.2em;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-body.light-theme {
-  background-color: #ffffff;
-  color: #222;
-}
-
-body.light-theme a {
-  color: #0077cc;
-}
-
-body.light-theme .quote,
-body.light-theme .rotating-quote {
-  background-color: #f0f0f0;
-  color: #333;
-  border-left-color: #0077cc;
-  box-shadow: none;
-}
-
-body.light-theme .about-title {
-  color: #0077cc;
-  text-shadow: none;
-}
-
-body.light-theme #theme-toggle {
-  color: #0077cc;
-  border-color: #0077cc;
-}
-
-body.light-theme .rotating-quote .quote-author {
-  color: #777;
-}
-
-.quote,
-.rotating-quote {
-  font-style: italic;
-  color: #00ffaa;
-  border-left: 4px solid #00ffaa;
-  padding: 15px 25px;
-  margin: 40px auto;
-  background-color: #2a2a2a;
-  box-shadow: 0 0 10px #00ffaa55;
-  transition: all 0.4s ease-in-out;
-  font-size: 1.1em;
-  line-height: 1.6;
-  max-width: 800px;
-  animation: fadeInQuote 1s ease-in-out;
-}
-
-.quote cite,
-.rotating-quote .quote-author {
-  display: block;
-  margin-top: 10px;
-  font-size: 0.9em;
-  color: #ccc;
-  text-align: right;
-}
-
-.burger {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
-  margin: 10px auto;
-}
-
-.burger div {
-  width: 25px;
-  height: 3px;
-  background: #00ffaa;
-}
-
-@media (max-width: 600px) {
-  .container {
-    padding: 10px;
-  }
-
-  header h1 {
-    font-size: 2em;
-  }
-
-  header h2 {
-    font-size: 1em;
-  }
-
-  nav a {
-    display: block;
-    margin: 10px 0;
-  }
-
-  .profile {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .profile img {
-    width: 180px;
-  }
-
-  .bio {
-    width: 100%;
-  }
-
-  .about-list {
-    font-size: 1em;
-  }
-
-  .socials img {
-    width: 32px;
-    margin: 0 0.2em;
-  }
-
-  .burger {
-    display: flex;
-  }
-
-  #nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-  }
-
-  #nav-links.active {
-    display: flex;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="assets/photo.jpg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Explore Ibrahim Kabore's journey through Geomatics, podcasts, books, fitness, and more.">
+  <meta name="author" content="Ibrahim Kabore">
+  <meta property="og:title" content="Albarka | Ibrahim Kabore">
+  <meta property="og:image" content="assets/photo.jpg">
+  <title>Ibrahim Kabore</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ibrahim Kabore",
+  "url": "https://albarka.github.io",
+  "sameAs": [
+    "https://www.linkedin.com/in/ibrahimkabore/",
+    "https://github.com/MORAWA-dev"
+  ],
+  "jobTitle": "Master Student in Geomatics",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "UM6P"
   }
 }
+</script>
+</head>
+<body>
+  <button id="theme-toggle" title="Switch theme">🌗</button>
+  <div class="container">
+    <header>
+      <h1>Ibrahim KABORE</h1>
+      <h2>Master Student in Geomatics, Remote Sensing, and GIS</h2>
+      <div class="nav-container">
+        <div class="burger" id="burger" aria-label="Menu" aria-controls="nav-links" aria-expanded="false" role="button" tabindex="0">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <nav id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="https://docs.google.com/document/d/1VG5TWbQsa7yIJUPrOkfy5_3NcM1TWRCxSSmHoj0F3zc/edit?usp=sharing" target="_blank">CV</a>
+          <a href="https://scholar.google.com/citations?hl=en&user=KD0o82oAAAAJ" target="_blank">Publications</a>
+          <a href="albarka.html">Albarka</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <blockquote id="rotating-quote" class="quote rotating-quote">
+        <span class="quote-text">Loading quote...</span>
+        <cite class="quote-author"></cite>
+      </blockquote>
+      <div class="profile">
+        <img loading="lazy" src="assets/photo_2025-05-04_21-08-45.jpg" alt="Ibrahim Kabore Profile Photo" />
+        <div class="bio">
+          <p>Hello,</p>
+          <p>
+            I am Ibrahim Kabore, a Master's student in Geomatics, Remote Sensing, GIS, and Environmental Science at <a href="https://www.fstbm.ac.ma/" target="_blank">FST Beni Mellal</a>.
+            My thesis focuses on <strong>“Harmonisation of Moroccan Soil Spectral Libraries (Vis-NIR)”</strong> at the 
+            <a href="https://crsa.um6p.ma/home" target="_blank">Center for Remote Sensing Applications (CRSA)</a>,
+            part of the <a href="https://www.um6p.ma/" target="_blank">Mohammed VI Polytechnic University (UM6P)</a>, Morocco.
+          </p>
+          <p>
+            I apply <strong>Soil Spectroscopy and Machine Learning</strong> techniques to predict, classify, and map soil properties.
+            This contributes to the <a href="https://www.ocpgroup.ma" target="_blank">UM6P and OCP Group's vision</a> for sustainable agriculture and eco-friendly land management.
+            Supervised by <a href="https://scholar.google.ca/citations?user=Tck9Yj0AAAAJ&hl=en" target="_blank">Prof. Abderrazak EL HARTI</a> and
+            <a href="https://scholar.google.ca/citations?hl=en&user=EHZdhEQAAAAJ" target="_blank">Prof. Mohamed Bayad</a>.
+          </p>
+          <p>
+            Besides academics, I am a certified personal trainer passionate about fitness, self-discipline, and personal development.
+          </p>
+          <h3 class="about-title">✨ About Me ✨</h3>
+          <ul class="about-list">
+            <li>💡 Hardworking and dedicated</li>
+            <li>⚡ Fast learner and collaborative team player</li>
+            <li>🎯 Strong leadership & communication skills</li>
+            <li>🧠 Excellent problem-solver and pattern recognizer</li>
+            <li>👂 Great listener, observer, and critical thinker</li>
+          </ul>
+        </div>
+      </div>
+      <blockquote class="quote">
+        “Discipline is the bridge between goals and accomplishment.”
+        <cite>— Jim Rohn</cite>
+      </blockquote>
+    </main>
+    <footer>
+      <p>© @beingalbarka 2025 | Last updated on June 2025</p>
+      <div class="socials">
+        <a href="mailto:ibrakabore01@gmail.com" aria-label="Email Ibrahim" target="_blank">
+          <img src="https://img.icons8.com/fluency/48/mail.png" alt="Email"/>
+        </a>
+        <a href="https://www.linkedin.com/in/ibrahimkabore/" target="_blank">
+          <img src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn"/>
+        </a>
+        <a href="https://github.com/MORAWA-dev" target="_blank">
+          <img src="https://img.icons8.com/ios-glyphs/48/github.png" alt="GitHub"/>
+        </a>
+        <a href="https://www.researchgate.net/profile/Ibrahim-Kabore-4?ev=hdr_xprf" target="_blank">
+          <img src="https://img.icons8.com/windows/48/researchgate.png" alt="ResearchGate"/>
+        </a>
+        <a href="https://orcid.org/0009-0006-1008-5628" target="_blank">
+          <img src="https://img.icons8.com/windows/48/orcid.png" alt="ORCID"/>
+        </a>
+        <a href="https://x.com/albarka007?s=09" target="_blank">
+          <img src="https://img.icons8.com/ios-filled/48/x.png" alt="Twitter X"/>
+        </a>
+        <a href="https://www.instagram.com/beingalbarka/" target="_blank">
+          <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram"/>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <button id="scrollTop" title="Back to Top">↑</button>
+  <script>
+    const quotes = [
+      { text: "Innovation distinguishes between a leader and a follower.", author: "Steve Jobs" },
+      { text: "Stay hungry, stay foolish.", author: "Steve Jobs" },
+      { text: "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work.", author: "Steve Jobs" },
+      { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+      { text: "My job is not to be easy on people. My job is to take these great people we have and to push them and make them even better.", author: "Steve Jobs" },
+      { text: "It’s not about money. It’s about the people you have, how you’re led, and how much you get it.", author: "Steve Jobs" },
+      { text: "I’m convinced that about half of what separates the successful entrepreneurs from the non-successful ones is pure perseverance.", author: "Steve Jobs" },
+      { text: "Sometimes life hits you in the head with a brick. Don’t lose faith.", author: "Steve Jobs" },
+      { text: "I want to put a ding in the universe.", author: "Steve Jobs" },
+      { text: "Remembering that you are going to die is the best way I know to avoid the trap of thinking you have something to lose.", author: "Steve Jobs" },
+      { text: "Your time is limited, so don’t waste it living someone else’s life.", author: "Steve Jobs" },
+      { text: "Don’t be trapped by dogma – which is living with the results of other people’s thinking.", author: "Steve Jobs" },
+      { text: "Have the courage to follow your heart and intuition. They somehow already know what you truly want to become.", author: "Steve Jobs" },
+      { text: "Creativity is just connecting things.", author: "Steve Jobs" },
+      { text: "I’m as proud of what we don’t do as I am of what we do.", author: "Steve Jobs" },
+      { text: "Quality is more important than quantity. One home run is much better than two doubles.", author: "Steve Jobs" },
+      { text: "Innovation comes from saying no to a thousand things.", author: "Steve Jobs" },
+      { text: "The people who are crazy enough to think they can change the world are the ones who do.", author: "Steve Jobs" },
+      { text: "Be a yardstick of quality. Some people aren’t used to an environment where excellence is expected.", author: "Steve Jobs" },
+      { text: "Details matter, it’s worth waiting to get it right.", author: "Steve Jobs" },
+      { text: "Everything around you that you call life was made up by people that were no smarter than you. And you can change it.", author: "Steve Jobs" },
+      { text: "You have the opportunity to sit with the greatest minds who ever lived — through their words, their work, and their stories.", author: "Inspired by Steve Jobs" },
+      { text: "It always seems impossible until it is done.", author: "Nelson Mandela" },
+      { text: "Success is not final, failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
+      { text: "The best way to predict the future is to invent it.", author: "Alan Kay" },
+      { text: "Do not wait to strike till the iron is hot, but make it hot by striking.", author: "William Butler Yeats" },
+      { text: "The only limit to our realization of tomorrow is our doubts of today.", author: "Franklin D. Roosevelt" },
+      { text: "Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.", author: "Albert Einstein" },
+      { text: "Strive not to be a success, but rather to be of value.", author: "Albert Einstein" },
+      { text: "Whether you think you can or you think you can’t, you’re right.", author: "Henry Ford" },
+      { text: "In the middle of difficulty lies opportunity.", author: "Albert Einstein" },
+      { text: "I have not failed. I've just found 10,000 ways that won't work.", author: "Thomas Edison" },
+      { text: "The mind is everything. What you think you become.", author: "Buddha" },
+      { text: "The only way to learn mathematics is to do mathematics.", author: "Paul Halmos" },
+      { text: "Simplicity is the ultimate sophistication.", author: "Leonardo da Vinci" }
+    ];
 
-@media (max-width: 900px) and (min-width: 601px) {
-  .profile {
-    flex-direction: column;
-    align-items: center;
-  }
+    let quoteIndex = 0;
+    const quoteText = document.querySelector('.quote-text');
+    const quoteAuthor = document.querySelector('.quote-author');
 
-  .profile img {
-    width: 200px;
-  }
+    function rotateQuote() {
+      quoteText.style.opacity = 0;
+      quoteAuthor.style.opacity = 0;
+      setTimeout(() => {
+        const quote = quotes[quoteIndex];
+        quoteText.textContent = `"${quote.text}"`;
+        quoteAuthor.textContent = `— ${quote.author}`;
+        quoteText.style.opacity = 1;
+        quoteAuthor.style.opacity = 1;
+        quoteIndex = (quoteIndex + 1) % quotes.length;
+      }, 400);
+    }
 
-  .bio {
-    text-align: center;
-  }
+    rotateQuote();
+    setInterval(rotateQuote, 13000);
 
-  nav a {
-    margin: 0 10px;
-  }
-}
+    const scrollTopButton = document.getElementById("scrollTop");
+    window.addEventListener("scroll", () => {
+      scrollTopButton.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    scrollTopButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 
-* {
-  box-sizing: border-box;
-}
+    const burger = document.getElementById("burger");
+    const nav = document.getElementById("nav-links");
+    burger.addEventListener("click", () => {
+      nav.classList.toggle("active");
+      const expanded = burger.getAttribute("aria-expanded") === "true";
+      burger.setAttribute("aria-expanded", !expanded);
+    });
 
-@keyframes fadeInQuote {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+    const toggleBtn = document.getElementById("theme-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light-theme");
+      if (document.body.classList.contains("light-theme")) {
+        localStorage.setItem("theme", "light");
+      } else {
+        localStorage.setItem("theme", "dark");
+      }
+    });
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+      }
+    });
+  </script>
+</body>
+</html>

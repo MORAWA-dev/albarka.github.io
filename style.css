@@ -22,6 +22,7 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: var(--dark-bg);
   color: var(--text-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.light-theme {
@@ -141,7 +142,7 @@ body.light-theme .socials a:hover img {
   box-shadow: 0 0 10px rgba(0, 119, 204, 0.6);
 }
 
-/* Quote Block Styling */
+/* Quote Block Styling: only show big quotes at the beginning and end */
 .quote, .rotating-quote {
   position: relative;
   background-color: #1e1e1e;
@@ -161,9 +162,11 @@ body.light-theme .socials a:hover img {
   box-shadow: 0 0 20px rgba(0, 255, 170, 0.5);
 }
 
-.quote::before, .rotating-quote .quote-text::before {
+/* Big opening quote on first quote block */
+.quote:first-of-type::before,
+.rotating-quote:first-of-type .quote-text::before {
   content: '“';
-  font-size: 2.5rem;
+  font-size: 3rem;
   position: absolute;
   left: 1rem;
   top: 0.2rem;
@@ -171,14 +174,24 @@ body.light-theme .socials a:hover img {
   animation: fadeInQuote 0.6s ease-out;
 }
 
-.quote::after, .rotating-quote .quote-text::after {
+/* Big closing quote on last quote block */
+.quote:last-of-type::after,
+.rotating-quote:last-of-type .quote-text::after {
   content: '”';
-  font-size: 2.5rem;
+  font-size: 3rem;
   position: absolute;
   right: 1rem;
   bottom: 0.2rem;
   color: var(--primary-color);
   animation: fadeInQuote 0.6s ease-out;
+}
+
+/* Hide small quotes for other blocks */
+.quote:not(:first-of-type)::before,
+.quote:not(:last-of-type)::after,
+.rotating-quote:not(:first-of-type) .quote-text::before,
+.rotating-quote:not(:last-of-type) .quote-text::after {
+  content: none;
 }
 
 .quote cite, .rotating-quote .quote-author {
@@ -267,6 +280,13 @@ body.light-theme #theme-toggle,
 body.light-theme .about-title {
   border-color: var(--accent-color);
   text-shadow: none;
+}
+
+/* Adjusted spacing: Increase space between h2 and nav */
+.nav-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px; /* increased from 12px */
 }
 
 /* Scroll-to-top Button */

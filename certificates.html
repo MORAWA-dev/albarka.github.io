@@ -17,6 +17,16 @@
       text-align: center;
       margin-bottom: 2rem;
     }
+    .category-block {
+      margin-bottom: 2rem;
+    }
+    .category-header {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #00ffaa;
+      cursor: pointer;
+      margin-bottom: 0.5rem;
+    }
     .cert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -46,10 +56,7 @@
       font-weight: bold;
       text-decoration: underline;
     }
-    @media print {
-      .no-print { display: none; }
-    }
-      .badge[data-category]::before {
+    .badge[data-category]::before {
       content: attr(data-category);
       display: inline-block;
       font-size: 0.75rem;
@@ -59,105 +66,201 @@
       border-radius: 4px;
       color: #fff;
     }
-
-    .cert-card h3 {
-      margin-top: 0.5rem;
+    @media print {
+      .no-print { display: none; }
     }
-  </style>
+    .drop-zone {
+    margin: 1rem 0;
+    padding: 2rem;
+    border: 2px dashed #00ffaa;
+    text-align: center;
+    color: #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .drop-zone:hover {
+    background-color: #1b1b1b;
+  }
+  .preview-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  .preview-list li {
+    background: #333;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+    color: #eee;
+    font-size: 0.9rem;
+  }
+$1
 </head>
 <body>
   <script>
-    function filterCertificates(category) {
-      document.querySelectorAll('.cert-card').forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+    function toggleCategory(id) {
+      const grid = document.getElementById(id);
+      grid.style.display = grid.style.display === 'none' ? 'grid' : 'none';
     }
   </script>
   <div class="container certificates-section">
-    <div style="text-align:center; margin-bottom: 1.5rem;">
-      <label for="categoryFilter" style="font-weight: bold; color: #00ffaa;">Filter by Category:</label>
-      $1$2<option value="Udemey">Udemey</option>$3
-    </div>
     <h1>📜 Certificates</h1>
-    $1
-  <div class="cert-card" data-category="Udemey">
-    <h3>Deep Learning and Computer Vision</h3>
-    <p>Issued by Udemey • March 2024</p>
-    <a href="#" target="_blank">View Certificate</a>
-  </div>
-  <div class="cert-card" data-category="Udemey">
-    <h3>Data Science Masterclass</h3>
-    <p>Issued by Udemey • February 2024</p>
-    <a href="#" target="_blank">View Certificate</a>
-  </div>
-  <div class="cert-card" data-category="Udemey">
-    <h3>Web Development Bootcamp</h3>
-    <p>Issued by Udemey • January 2023</p>
-    <a href="#" target="_blank">View Certificate</a>
-  </div>
-  <div class="cert-card badge" data-category="Coursera">
-    <h3>Machine Learning with Python</h3>
-    <p>Issued by Coursera • April 2024</p>
-    <a href="#" target="_blank">View Certificate</a>
-  </div>
-  <div class="cert-card" data-category="EO_College">
-    <h3>Satellite Remote Sensing Basics</h3>
-    <p>Issued by EO College • March 2023</p>
-    <a href="#" target="_blank">View Certificate</a>
-  </div>
-  <div class="cert-card" data-category="FAO UM6P">
-    <h3>Geospatial AI for Agriculture</h3>
-    <p>Issued by FAO & UM6P • Jan 2024</p>
-    <a href="#" target="_blank">View Certificate</a>
-  </div>
-  <div class="cert-card" data-category="Geoversity">
-    <h3>Nature-Based Solutions for Sustainability</h3>
-    <p>Issued by Geoversity • Aug 2023</p>
-    <a href="#" target="_blank">View Certificate</a>
-  </div>
-  <div class="cert-card" data-category="UM6P">
-    <h3>Advanced Remote Sensing Applications</h3>
-    <p>Issued by UM6P • May 2023</p>
-    <a href="#" target="_blank">View Certificate</a>
-  </div>
-</div>
-      <div class="cert-card">
-        <h3>Satellite Remote Sensing Basics</h3>
-        <p>Issued by EO College • March 2023</p>
-        <a href="#" target="_blank">View Certificate</a>
-      </div>
-      <div class="cert-card">
-        <h3>Geospatial AI for Agriculture</h3>
-        <p>Issued by FAO & UM6P • Jan 2024</p>
-        <a href="#" target="_blank">View Certificate</a>
-      <div class="cert-card" data-category="Community">
-        <h3>Volunteer Leadership Training</h3>
-        <p>Issued by YouthAction • July 2022</p>
-        <a href="#" target="_blank">View Certificate</a>
-      </div>
-      <div class="cert-card" data-category="Sports">
-        <h3>Personal Trainer Certification</h3>
-        <p>Issued by IFBB • Sept 2021</p>
-        <a href="#" target="_blank">View Certificate</a>
-      </div>
-      <div class="cert-card" data-category="CESAM">
-        <h3>Climate Change Adaptation Workshop</h3>
-        <p>Issued by CESAM • Nov 2022</p>
-        <a href="#" target="_blank">View Certificate</a>
-      </div>
-      <div class="cert-card" data-category="Others">
-        <h3>Python for Data Science</h3>
-        <p>Issued by OpenClassrooms • Feb 2023</p>
-        <a href="#" target="_blank">View Certificate</a>
-      </div>
 
-      $1 style="text-align:center; margin-top: 2rem;">
+    <div class="category-block">
+      <div class="category-header" onclick="toggleCategory('Coursera')">Coursera ▼</div>
+      <div class="cert-grid" id="Coursera">
+        <div class="cert-card" data-category="Coursera">
+          <h3>Machine Learning with Python</h3>
+          <p>Issued by Coursera • April 2024</p>
+          <a href="#" target="_blank">View Certificate</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-block">
+      <div class="category-header" onclick="toggleCategory('Udemey')">Udemey ▼</div>
+      <div class="cert-grid" id="Udemey">
+        <div class="cert-card" data-category="Udemey">
+          <h3>Deep Learning and Computer Vision</h3>
+          <p>Issued by Udemey • March 2024</p>
+          <a href="#" target="_blank">View Certificate</a>
+        </div>
+        <div class="cert-card" data-category="Udemey">
+          <h3>Data Science Masterclass</h3>
+          <p>Issued by Udemey • February 2024</p>
+          <a href="#" target="_blank">View Certificate</a>
+        </div>
+        <div class="cert-card" data-category="Udemey">
+          <h3>Web Development Bootcamp</h3>
+          <p>Issued by Udemey • January 2023</p>
+          <a href="#" target="_blank">View Certificate</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-block">
+      <div class="category-header" onclick="toggleCategory('UM6P')">UM6P ▼</div>
+      <div class="cert-grid" id="UM6P">
+        <div class="cert-card" data-category="UM6P">
+          <h3>Advanced Remote Sensing Applications</h3>
+          <p>Issued by UM6P • May 2023</p>
+          <a href="#" target="_blank">View Certificate</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-block">
+      <div class="category-header" onclick="toggleCategory('FAO_UM6P')">FAO & UM6P ▼</div>
+      <div class="cert-grid" id="FAO_UM6P">
+        <div class="cert-card" data-category="FAO UM6P">
+          <h3>Geospatial AI for Agriculture</h3>
+          <p>Issued by FAO & UM6P • Jan 2024</p>
+          <a href="#" target="_blank">View Certificate</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-block">
+      <div class="category-header" onclick="toggleCategory('EO_College')">EO_College ▼</div>
+      <div class="cert-grid" id="EO_College">
+        <div class="cert-card" data-category="EO_College">
+          <h3>Satellite Remote Sensing Basics</h3>
+          <p>Issued by EO College • March 2023</p>
+          <a href="#" target="_blank">View Certificate</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-block">
+      <div class="category-header" onclick="toggleCategory('Geoversity')">Geoversity ▼</div>
+      <div class="cert-grid" id="Geoversity">
+        <div class="cert-card" data-category="Geoversity">
+          <h3>Nature-Based Solutions for Sustainability</h3>
+          <p>Issued by Geoversity • Aug 2023</p>
+          <a href="#" target="_blank">View Certificate</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-block">
+      <div class="category-header" onclick="toggleCategory('Community')">Community ▼</div>
+      <div class="cert-grid" id="Community">
+        <div class="cert-card" data-category="Community">
+          <h3>Volunteer Leadership Training</h3>
+          <p>Issued by YouthAction • July 2022</p>
+          <a href="#" target="_blank">View Certificate</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-block">
+      <div class="category-header" onclick="toggleCategory('Sports')">Sports ▼</div>
+      <div class="cert-grid" id="Sports">
+        <div class="cert-card" data-category="Sports">
+          <h3>Personal Trainer Certification</h3>
+          <p>Issued by IFBB • Sept 2021</p>
+          <a href="#" target="_blank">View Certificate</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-block">
+      <div class="category-header" onclick="toggleCategory('CESAM')">CESAM ▼</div>
+      <div class="cert-grid" id="CESAM">
+        <div class="cert-card" data-category="CESAM">
+          <h3>Climate Change Adaptation Workshop</h3>
+          <p>Issued by CESAM • Nov 2022</p>
+          <a href="#" target="_blank">View Certificate</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-block">
+      <div class="category-header" onclick="toggleCategory('Others')">Others ▼</div>
+      <div class="cert-grid" id="Others">
+        <div class="cert-card" data-category="Others">
+          <h3>Python for Data Science</h3>
+          <p>Issued by OpenClassrooms • Feb 2023</p>
+          <a href="#" target="_blank">View Certificate</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="no-print" style="text-align:center; margin-top: 2rem;">
       <button onclick="window.print()">🖨️ Download as PDF</button>
     </div>
-  </div>
-</body>
+  <div class="no-print" style="text-align:center; margin-top: 2rem;">
+  <h2 style="color:#00ffaa;">📤 Upload Your Certificate</h2>
+  <label for="fileUpload" class="drop-zone">
+    Drag & drop or click to select files
+    <input type="file" id="fileUpload" multiple accept=".pdf,.jpg,.jpeg,.png" hidden />
+  </label>
+  <ul id="previewList" class="preview-list"></ul>
+</div>
+
+<script>
+  const fileInput = document.getElementById('fileUpload');
+  const previewList = document.getElementById('previewList');
+
+  fileInput.addEventListener('change', () => {
+  previewList.innerHTML = '';
+  Array.from(fileInput.files).forEach(file => {
+    const li = document.createElement('li');
+    if (file.type.startsWith('image/')) {
+      const img = document.createElement('img');
+      img.src = URL.createObjectURL(file);
+      img.style.maxWidth = '100%';
+      img.style.maxHeight = '200px';
+      img.style.marginBottom = '10px';
+      li.appendChild(img);
+    }
+    const label = document.createElement('span');
+    label.textContent = file.name + (file.type === 'application/pdf' ? ' 📄' : ' 🖼️');
+    li.appendChild(label);
+    previewList.appendChild(li);
+  });
+});
+  });
+</script>
+$1
 </html>

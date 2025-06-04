@@ -80,21 +80,25 @@
   <div class="container certificates-section">
     <div style="text-align:center; margin-bottom: 1.5rem;">
       <label for="categoryFilter" style="font-weight: bold; color: #00ffaa;">Filter by Category:</label>
-      <select id="categoryFilter" onchange="filterCertificates(this.value)" style="padding: 0.5rem; border-radius: 5px;">
-        <option value="all">All</option>
-        <option value="Coursera">Coursera</option>
-        <option value="EO_College">EO_College</option>
-        <option value="FAO UM6P">FAO UM6P</option>
-        <option value="Geoversity">Geoversity</option>
-        <option value="UM6P">UM6P</option>
-        <option value="Community">Community</option>
-        <option value="Sports">Sports</option>
-        <option value="CESAM">CESAM</option>
-        <option value="Others">Others</option>
-      </select>
+      $1$2<option value="Udemey">Udemey</option>$3
     </div>
     <h1>📜 Certificates</h1>
-    <div class="cert-grid">
+    $1
+  <div class="cert-card" data-category="Udemey">
+    <h3>Deep Learning and Computer Vision</h3>
+    <p>Issued by Udemey • March 2024</p>
+    <a href="#" target="_blank">View Certificate</a>
+  </div>
+  <div class="cert-card" data-category="Udemey">
+    <h3>Data Science Masterclass</h3>
+    <p>Issued by Udemey • February 2024</p>
+    <a href="#" target="_blank">View Certificate</a>
+  </div>
+  <div class="cert-card" data-category="Udemey">
+    <h3>Web Development Bootcamp</h3>
+    <p>Issued by Udemey • January 2023</p>
+    <a href="#" target="_blank">View Certificate</a>
+  </div>
   <div class="cert-card badge" data-category="Coursera">
     <h3>Machine Learning with Python</h3>
     <p>Issued by Coursera • April 2024</p>

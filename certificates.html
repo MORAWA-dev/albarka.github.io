@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificates | Ibrahim Kabore</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/photo.jpg" type="image/jpeg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .certificates-section {
+      max-width: 960px;
+      margin: 3rem auto;
+      padding: 1rem;
+    }
+    .certificates-section h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .cert-card {
+      background-color: #2a2a2a;
+      border-left: 4px solid #00ffaa;
+      padding: 1.2rem;
+      box-shadow: 0 0 10px #00ffaa33;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .cert-card:hover {
+      transform: scale(1.02);
+    }
+    .cert-card h3 {
+      margin: 0 0 0.5rem;
+      color: #00ffaa;
+    }
+    .cert-card p {
+      margin: 0.5rem 0;
+      color: #ccc;
+    }
+    .cert-card a {
+      color: #50fa7b;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    @media print {
+      .no-print { display: none; }
+    }
+      .badge[data-category]::before {
+      content: attr(data-category);
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 2px 6px;
+      margin-bottom: 0.5rem;
+      background-color: #00ffaa55;
+      border-radius: 4px;
+      color: #fff;
+    }
+
+    .cert-card h3 {
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function filterCertificates(category) {
+      document.querySelectorAll('.cert-card').forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+  <div class="container certificates-section">
+    <div style="text-align:center; margin-bottom: 1.5rem;">
+      <label for="categoryFilter" style="font-weight: bold; color: #00ffaa;">Filter by Category:</label>
+      <select id="categoryFilter" onchange="filterCertificates(this.value)" style="padding: 0.5rem; border-radius: 5px;">
+        <option value="all">All</option>
+        <option value="Coursera">Coursera</option>
+        <option value="EO_College">EO_College</option>
+        <option value="FAO UM6P">FAO UM6P</option>
+        <option value="Geoversity">Geoversity</option>
+        <option value="UM6P">UM6P</option>
+        <option value="Community">Community</option>
+        <option value="Sports">Sports</option>
+        <option value="CESAM">CESAM</option>
+        <option value="Others">Others</option>
+      </select>
+    </div>
+    <h1>📜 Certificates</h1>
+    <div class="cert-grid">
+  <div class="cert-card badge" data-category="Coursera">
+    <h3>Machine Learning with Python</h3>
+    <p>Issued by Coursera • April 2024</p>
+    <a href="#" target="_blank">View Certificate</a>
+  </div>
+  <div class="cert-card" data-category="EO_College">
+    <h3>Satellite Remote Sensing Basics</h3>
+    <p>Issued by EO College • March 2023</p>
+    <a href="#" target="_blank">View Certificate</a>
+  </div>
+  <div class="cert-card" data-category="FAO UM6P">
+    <h3>Geospatial AI for Agriculture</h3>
+    <p>Issued by FAO & UM6P • Jan 2024</p>
+    <a href="#" target="_blank">View Certificate</a>
+  </div>
+  <div class="cert-card" data-category="Geoversity">
+    <h3>Nature-Based Solutions for Sustainability</h3>
+    <p>Issued by Geoversity • Aug 2023</p>
+    <a href="#" target="_blank">View Certificate</a>
+  </div>
+  <div class="cert-card" data-category="UM6P">
+    <h3>Advanced Remote Sensing Applications</h3>
+    <p>Issued by UM6P • May 2023</p>
+    <a href="#" target="_blank">View Certificate</a>
+  </div>
+</div>
+      <div class="cert-card">
+        <h3>Satellite Remote Sensing Basics</h3>
+        <p>Issued by EO College • March 2023</p>
+        <a href="#" target="_blank">View Certificate</a>
+      </div>
+      <div class="cert-card">
+        <h3>Geospatial AI for Agriculture</h3>
+        <p>Issued by FAO & UM6P • Jan 2024</p>
+        <a href="#" target="_blank">View Certificate</a>
+      <div class="cert-card" data-category="Community">
+        <h3>Volunteer Leadership Training</h3>
+        <p>Issued by YouthAction • July 2022</p>
+        <a href="#" target="_blank">View Certificate</a>
+      </div>
+      <div class="cert-card" data-category="Sports">
+        <h3>Personal Trainer Certification</h3>
+        <p>Issued by IFBB • Sept 2021</p>
+        <a href="#" target="_blank">View Certificate</a>
+      </div>
+      <div class="cert-card" data-category="CESAM">
+        <h3>Climate Change Adaptation Workshop</h3>
+        <p>Issued by CESAM • Nov 2022</p>
+        <a href="#" target="_blank">View Certificate</a>
+      </div>
+      <div class="cert-card" data-category="Others">
+        <h3>Python for Data Science</h3>
+        <p>Issued by OpenClassrooms • Feb 2023</p>
+        <a href="#" target="_blank">View Certificate</a>
+      </div>
+
+      $1 style="text-align:center; margin-top: 2rem;">
+      <button onclick="window.print()">🖨️ Download as PDF</button>
+    </div>
+  </div>
+</body>
+</html>

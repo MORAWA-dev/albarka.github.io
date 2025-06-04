@@ -1,3 +1,4 @@
+/* Base Theme and Font */
 body {
   font-family: 'Inter', sans-serif;
   background-color: #1f1f1f;
@@ -5,6 +6,8 @@ body {
   line-height: 1.7;
   font-size: clamp(1rem, 1.1vw, 1.125rem);
   transition: background-color 0.4s ease, color 0.4s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -24,9 +27,11 @@ header {
 
 header h1 {
   font-size: clamp(2rem, 5vw, 3rem);
-  color: white;
+  color: #ffffff;
   margin-bottom: 0.3em;
   letter-spacing: 1px;
+  transition: color 0.3s ease;
+  line-height: 1.2;
 }
 
 header h2 {
@@ -34,6 +39,7 @@ header h2 {
   font-weight: normal;
   margin-top: 0;
   font-size: clamp(1rem, 3vw, 1.25rem);
+  transition: color 0.3s ease;
 }
 
 nav a {
@@ -41,6 +47,7 @@ nav a {
   color: #00ff99;
   text-decoration: none;
   font-size: 1rem;
+  padding: 0.5rem 0;
 }
 
 nav a:hover {
@@ -72,6 +79,7 @@ nav a:hover {
 a {
   color: #50fa7b;
   text-decoration: underline;
+  transition: color 0.3s ease;
 }
 
 .about-title {
@@ -150,11 +158,20 @@ footer {
   font-size: 1.2em;
   cursor: pointer;
   border-radius: 5px;
+  transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 body.light-theme {
   background-color: #ffffff;
   color: #222;
+}
+
+body.light-theme header h1 {
+  color: #111;
+}
+
+body.light-theme header h2 {
+  color: #333;
 }
 
 body.light-theme a {
@@ -282,8 +299,60 @@ body.light-theme .rotating-quote .quote-author {
   }
 }
 
-* {
-  box-sizing: border-box;
+@media (prefers-color-scheme: light) {
+  body:not(.dark-theme):not(.light-theme) {
+    background-color: #ffffff;
+    color: #222;
+  }
+  body:not(.dark-theme):not(.light-theme) header h1 { color: #111; }
+  body:not(.dark-theme):not(.light-theme) header h2 { color: #333; }
+  body:not(.dark-theme):not(.light-theme) a { color: #0077cc; }
+  body:not(.dark-theme):not(.light-theme) .quote,
+  body:not(.dark-theme):not(.light-theme) .rotating-quote {
+    background-color: #f0f0f0;
+    color: #333;
+    border-left-color: #0077cc;
+    box-shadow: none;
+  }
+  body:not(.dark-theme):not(.light-theme) .about-title {
+    color: #0077cc;
+    text-shadow: none;
+  }
+  body:not(.dark-theme):not(.light-theme) #theme-toggle {
+    color: #0077cc;
+    border-color: #0077cc;
+  }
+  body:not(.dark-theme):not(.light-theme) .rotating-quote .quote-author {
+    color: #777;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.dark-theme):not(.light-theme) {
+    background-color: #1f1f1f;
+    color: #eee;
+  }
+  body:not(.dark-theme):not(.light-theme) header h1 { color: #ffffff; }
+  body:not(.dark-theme):not(.light-theme) header h2 { color: #ccc; }
+  body:not(.dark-theme):not(.light-theme) a { color: #50fa7b; }
+  body:not(.dark-theme):not(.light-theme) .quote,
+  body:not(.dark-theme):not(.light-theme) .rotating-quote {
+    background-color: #2a2a2a;
+    color: #00ffaa;
+    border-left-color: #00ffaa;
+    box-shadow: 0 0 10px #00ffaa55;
+  }
+  body:not(.dark-theme):not(.light-theme) .about-title {
+    color: #00ffaa;
+    text-shadow: 0 0 5px #50fa7b;
+  }
+  body:not(.dark-theme):not(.light-theme) #theme-toggle {
+    color: #00ffaa;
+    border-color: #00ffaa;
+  }
+  body:not(.dark-theme):not(.light-theme) .rotating-quote .quote-author {
+    color: #ccc;
+  }
 }
 
 @keyframes fadeInQuote {

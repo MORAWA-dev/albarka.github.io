@@ -8,6 +8,25 @@
   <link rel="icon" href="assets/photo.jpg" type="image/jpeg" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    .project-card .btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #00ffaa, #00cc88);
+  color: #111;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  box-shadow: 0 0 12px #00ffaa66;
+  transition: all 0.3s ease;
+}
+
+.project-card .btn:hover {
+  background: linear-gradient(135deg, #00cc88, #00ffaa);
+  transform: scale(1.05);
+  box-shadow: 0 0 18px #00ffaaaa;
+}
+
     .project-section {
       max-width: 960px;
       margin: 3rem auto;
@@ -49,7 +68,8 @@
     <div class="project-card">
       <h3>Moroccan Soil Mapping Platform</h3>
       <p>This project aims to build a Moroccan soil spectral library open-access platform. Users will be able to upload their spectral soil data and get predictions of key soil elements for agricultural decision-making and environmental insights.</p>
-      <a href="#" target="_blank">View Project Summary</a>
+     <a href="https://mssl.shinyapps.io/mssl-soil-prediction/" target="_blank" class="btn">🚀 Launch Platform</a>
+
     </div>
 
     <div class="project-card">

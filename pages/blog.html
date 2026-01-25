@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agentic Brahim's Blog - Thoughts on AI, LLMs, RAG systems, and building intelligent applications for Africa">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <title>Blog | Agentic Brahim</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  
+  <!-- Umami Analytics -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="YOUR_WEBSITE_ID"></script>
+  
+  <style>
+    .blog-card {
+      background: var(--bg-white);
+      border: 2px solid var(--border-dark);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 4px 4px 0 var(--border-dark);
+      transition: all 0.15s ease;
+      display: block;
+      color: var(--text-dark);
+    }
+    .blog-card:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 var(--border-dark);
+    }
+    .blog-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .blog-meta {
+      font-size: 0.85rem;
+      color: var(--text-gray);
+      margin-bottom: 0.75rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .blog-excerpt {
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+    .blog-tags {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .blog-tag {
+      background: var(--accent-purple);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid var(--border-dark);
+    }
+    .coming-soon {
+      text-align: center;
+      padding: 3rem;
+      background: var(--bg-white);
+      border: 2px dashed var(--border-dark);
+      border-radius: var(--radius);
+      color: var(--text-gray);
+    }
+    .coming-soon h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+  </style>
+</head>
+<body>
+  <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+
+  <div class="container">
+    <!-- Header -->
+    <header style="text-align: center; padding: 2rem 0;">
+      <h1 class="hero-name" style="font-size: 2.5rem; justify-content: center;">
+        ✍️ <span class="name-highlight">Blog</span>
+      </h1>
+      <p class="tagline">Thoughts on AI, Agents & Building for Africa</p>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="resources.html">Resources</a>
+        <a href="blog.html" class="active">Blog</a>
+      </nav>
+    </header>
+
+    <!-- Featured Post -->
+    <h2 class="section-title">📌 Featured</h2>
+    <a href="blog/why-i-build-ai-for-africa.html" class="blog-card" style="border-left: 4px solid var(--accent-yellow);">
+      <h3>🌍 Why I'm Building AI for Africa</h3>
+      <div class="blog-meta">
+        <span>📅 January 25, 2026</span>
+        <span>⏱️ 5 min read</span>
+      </div>
+      <p class="blog-excerpt">
+        Africa has unique challenges that require unique solutions. Here's why I'm dedicating my career to building AI systems that serve African communities, starting with agriculture and mining.
+      </p>
+      <div class="blog-tags">
+        <span class="blog-tag" style="background: var(--accent-yellow);">AI for Good</span>
+        <span class="blog-tag" style="background: var(--accent-green);">Africa</span>
+        <span class="blog-tag" style="background: var(--accent-blue);">Personal</span>
+      </div>
+    </a>
+
+    <!-- All Posts -->
+    <h2 class="section-title">📚 All Posts</h2>
+    
+    <a href="blog/why-i-build-ai-for-africa.html" class="blog-card">
+      <h3>🌍 Why I'm Building AI for Africa</h3>
+      <div class="blog-meta">
+        <span>📅 January 25, 2026</span>
+        <span>⏱️ 5 min read</span>
+      </div>
+      <p class="blog-excerpt">Africa has unique challenges that require unique solutions...</p>
+      <div class="blog-tags">
+        <span class="blog-tag" style="background: var(--accent-yellow);">AI for Good</span>
+        <span class="blog-tag" style="background: var(--accent-green);">Africa</span>
+      </div>
+    </a>
+
+    <!-- Coming Soon -->
+    <div class="coming-soon">
+      <h3>🚀 More posts coming soon!</h3>
+      <p>I'm working on articles about RAG systems, fine-tuning LLMs, and multi-agent workflows.</p>
+      <p style="margin-top: 1rem;">
+        <a href="../index.html#contact-form" class="contact-btn">Get notified →</a>
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Agentic Brahim · <a href="../index.html">← Back to Home</a></p>
+    </footer>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

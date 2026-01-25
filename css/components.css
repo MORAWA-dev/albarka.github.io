@@ -686,6 +686,151 @@ body.dark-theme .quote-card {
   margin-top: 2rem;
 }
 
+/* Testimonials */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.testimonial-card {
+  background: var(--bg-white);
+  border: 2px solid var(--border-dark);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: 4px 4px 0 var(--border-dark);
+  transition: all 0.15s ease;
+}
+
+.testimonial-card:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--border-dark);
+}
+
+.testimonial-quote {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.testimonial-quote::before {
+  content: '"';
+  font-size: 2rem;
+  color: var(--accent-purple);
+  line-height: 0;
+  vertical-align: -0.4rem;
+  margin-right: 0.25rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.testimonial-avatar {
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-purple);
+  border-radius: 50%;
+  border: 2px solid var(--border-dark);
+}
+
+.testimonial-author strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.testimonial-author span {
+  font-size: 0.8rem;
+  color: var(--text-gray);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  border: 3px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  box-shadow: 6px 6px 0 var(--border-dark);
+}
+
+.newsletter-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.newsletter-section > p {
+  color: var(--text-dark);
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.newsletter-form input[type="email"] {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-dark);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.newsletter-form button {
+  padding: 0.75rem 1.5rem;
+  background: var(--text-dark);
+  color: var(--bg-cream);
+  border: 2px solid var(--border-dark);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 3px 3px 0 var(--border-dark);
+}
+
+.newsletter-form button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--border-dark);
+}
+
+.newsletter-note {
+  font-size: 0.75rem;
+  color: var(--text-dark);
+  opacity: 0.7;
+  margin-top: 1rem;
+}
+
+.newsletter-note a {
+  color: var(--text-dark);
+  text-decoration: underline;
+}
+
 /* Contact Form */
 .contact-section {
   background: var(--bg-white);
@@ -999,6 +1144,14 @@ body.dark-theme #theme-toggle:hover { box-shadow: 0 0 0 #555; }
 body.dark-theme nav a { border-color: #555; box-shadow: 2px 2px 0 #555; }
 body.dark-theme nav a:hover { box-shadow: 0 0 0 #555; }
 body.dark-theme nav a.active { box-shadow: 2px 2px 0 #555; }
+body.dark-theme .testimonial-card { border-color: #444; box-shadow: 4px 4px 0 #555; }
+body.dark-theme .testimonial-card:hover { box-shadow: 2px 2px 0 #555; }
+body.dark-theme .testimonial-author { border-color: #444; }
+body.dark-theme .testimonial-avatar { border-color: #444; }
+body.dark-theme .newsletter-section { border-color: #444; box-shadow: 6px 6px 0 #555; }
+body.dark-theme .newsletter-form input { border-color: #444; }
+body.dark-theme .newsletter-form button { border-color: #444; box-shadow: 3px 3px 0 #555; }
+body.dark-theme .newsletter-form button:hover { box-shadow: 1px 1px 0 #555; }
 
 /* Responsive */
 @media (max-width: 600px) {

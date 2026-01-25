@@ -278,3 +278,32 @@ function showToast(title, message, type = 'success') {
     setTimeout(() => toast.remove(), 300);
   }, 4000);
 }
+
+/* AIbrahim Chat Widget */
+function initChatWidget() {
+  const widget = document.getElementById('chat-widget');
+  const toggle = document.getElementById('chat-toggle');
+  const minimize = document.getElementById('chat-minimize');
+  
+  if (!widget || !toggle) return;
+  
+  toggle.addEventListener('click', () => {
+    widget.classList.toggle('open');
+  });
+  
+  if (minimize) {
+    minimize.addEventListener('click', () => {
+      widget.classList.remove('open');
+    });
+  }
+  
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && widget.classList.contains('open')) {
+      widget.classList.remove('open');
+    }
+  });
+}
+
+// Initialize chat widget on load
+document.addEventListener('DOMContentLoaded', initChatWidget);

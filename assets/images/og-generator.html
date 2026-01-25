@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OG Image Generator - Screenshot This!</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #333;
+      padding: 2rem;
+    }
+    .og-card {
+      width: 1200px;
+      height: 630px;
+      background: linear-gradient(135deg, #f5f3eb 0%, #e8e4d8 100%);
+      font-family: 'DM Sans', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Grid lines */
+    .og-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 99px,
+        rgba(0,0,0,0.03) 99px,
+        rgba(0,0,0,0.03) 100px
+      );
+    }
+    
+    /* Decorative shapes */
+    .shape { position: absolute; }
+    .shape-1 {
+      top: 60px; right: 90px;
+      width: 120px; height: 120px;
+      background: #f4b8c5;
+      border-radius: 50%;
+      border: 3px solid #1a1a1a;
+    }
+    .shape-2 {
+      top: 60px; left: 80px;
+      width: 60px; height: 60px;
+      background: #f5d76e;
+      border-radius: 8px;
+      border: 3px solid #1a1a1a;
+      transform: rotate(15deg);
+    }
+    .shape-3 {
+      bottom: 70px; left: 120px;
+      width: 80px; height: 80px;
+      background: #a8d4f0;
+      border-radius: 50%;
+      border: 3px solid #1a1a1a;
+    }
+    .shape-4 {
+      bottom: 60px; right: 100px;
+      width: 100px; height: 100px;
+      background: #b8e0d2;
+      border-radius: 16px;
+      border: 3px solid #1a1a1a;
+    }
+    
+    /* Main card */
+    .main-card {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1000px;
+      height: 340px;
+      background: #fff;
+      border: 4px solid #1a1a1a;
+      border-radius: 24px;
+      box-shadow: 8px 8px 0 rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      padding: 2.5rem;
+      gap: 2.5rem;
+    }
+    
+    /* Avatar */
+    .avatar {
+      width: 160px;
+      height: 160px;
+      background: linear-gradient(135deg, #d4c4e8, #a8d4f0, #b8e0d2);
+      border-radius: 50%;
+      border: 4px solid #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      flex-shrink: 0;
+    }
+    
+    /* Content */
+    .content {
+      flex: 1;
+    }
+    
+    .name {
+      display: inline-block;
+      background: #d4c4e8;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 0.75rem;
+    }
+    
+    .tagline {
+      font-size: 1.6rem;
+      color: #6b6b6b;
+      margin-bottom: 1.5rem;
+    }
+    
+    .tags {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    
+    .tag {
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      border: 2px solid #1a1a1a;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .tag-purple { background: #d4c4e8; }
+    .tag-blue { background: #a8d4f0; }
+    .tag-green { background: #b8e0d2; }
+    .tag-yellow { background: #f5d76e; }
+    
+    /* URL Badge */
+    .url-badge {
+      position: absolute;
+      right: 2.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+    }
+    
+    .url {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      border: 2px solid #1a1a1a;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .africa {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+      color: #6b6b6b;
+    }
+    .africa span { font-size: 2rem; }
+    
+    .instructions {
+      color: #fff;
+      text-align: center;
+      margin-top: 1rem;
+      font-family: 'DM Sans', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="og-card">
+      <!-- Decorative shapes -->
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      
+      <!-- Main card -->
+      <div class="main-card">
+        <div class="avatar">🤖</div>
+        <div class="content">
+          <div class="name">Agentic Brahim</div>
+          <div class="tagline">Builder & AI Enthusiast</div>
+          <div class="tags">
+            <span class="tag tag-purple">LLMs</span>
+            <span class="tag tag-blue">RAG</span>
+            <span class="tag tag-green">Agents</span>
+            <span class="tag tag-yellow">Geospatial AI</span>
+          </div>
+        </div>
+        <div class="url-badge">
+          <div class="url">agenticbrahim.dev</div>
+          <div class="africa">
+            <span>🌍</span>
+            Building for Africa
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="instructions">
+      👆 Take a screenshot of this card (1200×630px) and save as <strong>og-card.png</strong><br>
+      Then upload to /assets/images/ and update the og:image URLs
+    </p>
+  </div>
+</body>
+</html>

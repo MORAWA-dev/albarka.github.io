@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f3eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8e4d8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4c4e8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#a8d4f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8e0d2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-gradient)"/>
+  
+  <!-- Grid lines (subtle) -->
+  <g stroke="#1a1a1a" stroke-opacity="0.05" stroke-width="1">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+  </g>
+  
+  <!-- Decorative shapes -->
+  <circle cx="1050" cy="120" r="60" fill="#f4b8c5" stroke="#1a1a1a" stroke-width="3"/>
+  <rect x="100" y="80" width="50" height="50" rx="8" fill="#f5d76e" stroke="#1a1a1a" stroke-width="3" transform="rotate(15, 125, 105)"/>
+  <circle cx="180" cy="520" r="40" fill="#a8d4f0" stroke="#1a1a1a" stroke-width="3"/>
+  <rect x="1000" y="480" width="80" height="80" rx="12" fill="#b8e0d2" stroke="#1a1a1a" stroke-width="3"/>
+  
+  <!-- Main content card -->
+  <rect x="100" y="180" width="1000" height="320" rx="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="4"/>
+  <rect x="106" y="186" width="1000" height="320" rx="24" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-opacity="0.1" transform="translate(6, 6)"/>
+  
+  <!-- Avatar circle -->
+  <circle cx="220" cy="340" r="80" fill="url(#accent-gradient)" stroke="#1a1a1a" stroke-width="4"/>
+  <text x="220" y="360" font-family="Arial, sans-serif" font-size="60" text-anchor="middle" fill="#1a1a1a">🤖</text>
+  
+  <!-- Name with highlight -->
+  <rect x="320" y="260" width="380" height="60" rx="8" fill="#d4c4e8"/>
+  <text x="340" y="308" font-family="DM Sans, Arial, sans-serif" font-size="42" font-weight="700" fill="#1a1a1a">Agentic Brahim</text>
+  
+  <!-- Tagline -->
+  <text x="340" y="365" font-family="DM Sans, Arial, sans-serif" font-size="26" fill="#6b6b6b">Builder &amp; AI Enthusiast</text>
+  
+  <!-- Skills tags -->
+  <g font-family="DM Sans, Arial, sans-serif" font-size="16" font-weight="600">
+    <rect x="340" y="400" width="80" height="32" rx="16" fill="#d4c4e8" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="380" y="422" text-anchor="middle" fill="#1a1a1a">LLMs</text>
+    
+    <rect x="435" y="400" width="80" height="32" rx="16" fill="#a8d4f0" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="475" y="422" text-anchor="middle" fill="#1a1a1a">RAG</text>
+    
+    <rect x="530" y="400" width="120" height="32" rx="16" fill="#b8e0d2" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="590" y="422" text-anchor="middle" fill="#1a1a1a">Agents</text>
+    
+    <rect x="665" y="400" width="140" height="32" rx="16" fill="#f5d76e" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="735" y="422" text-anchor="middle" fill="#1a1a1a">Geospatial AI</text>
+  </g>
+  
+  <!-- Website URL -->
+  <text x="880" y="310" font-family="DM Sans, Arial, sans-serif" font-size="20" font-weight="600" fill="#1a1a1a" text-anchor="middle">agenticbrahim.dev</text>
+  <rect x="780" y="285" width="200" height="36" rx="18" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Africa icon hint -->
+  <text x="920" y="430" font-family="Arial, sans-serif" font-size="40">🌍</text>
+  <text x="980" y="430" font-family="DM Sans, Arial, sans-serif" font-size="16" fill="#6b6b6b">Building for Africa</text>
+</svg>

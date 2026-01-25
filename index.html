@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" title="Agentic Brahim's Blog" href="feed.xml">
   
   <!-- Umami Analytics (privacy-friendly) -->
   <script defer src="https://cloud.umami.is/script.js" data-website-id="75d57cfb-178c-4222-bdfe-05bec144c185"></script>
@@ -78,6 +79,9 @@
   
   <!-- Theme Toggle -->
   <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+  
+  <!-- Language Toggle -->
+  <button id="lang-toggle" aria-label="Toggle language" title="Français">🇫🇷</button>
 
   <div class="container" id="main-content">
     <!-- Hero Section -->
@@ -163,15 +167,35 @@
 
     <!-- Navigation -->
     <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="pages/about.html">About</a>
-      <a href="pages/projects.html">Projects</a>
-      <a href="pages/resources.html">Resources</a>
-      <a href="pages/blog.html">Blog</a>
+      <a href="index.html" class="active" data-i18n="nav.home">Home</a>
+      <a href="pages/about.html" data-i18n="nav.about">About</a>
+      <a href="pages/projects.html" data-i18n="nav.projects">Projects</a>
+      <a href="pages/resources.html" data-i18n="nav.resources">Resources</a>
+      <a href="pages/blog.html" data-i18n="nav.blog">Blog</a>
     </nav>
 
+    <!-- Impact Metrics -->
+    <div class="metrics-section">
+      <div class="metric-card">
+        <span class="metric-number">5+</span>
+        <span class="metric-label" data-i18n="metrics.models">ML Models Deployed</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-number">3</span>
+        <span class="metric-label" data-i18n="metrics.spaces">HuggingFace Spaces</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-number">10+</span>
+        <span class="metric-label" data-i18n="metrics.certs">AI Certifications</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-number">2</span>
+        <span class="metric-label" data-i18n="metrics.papers">Research Papers</span>
+      </div>
+    </div>
+
     <!-- Currently Building -->
-    <h2 class="section-title">🔥 Currently Building</h2>
+    <h2 class="section-title" data-i18n="section.building">🔥 Currently Building</h2>
     <div class="feature-card card-orange" style="padding: 1.5rem; border-left: 4px solid var(--accent-orange);">
       <h3 style="display: flex; align-items: center; gap: 0.5rem;">
         <span style="animation: pulse 2s infinite;">🚀</span>
@@ -190,7 +214,7 @@
     </div>
 
     <!-- Featured Projects -->
-    <h2 class="section-title">⭐ Featured Work</h2>
+    <h2 class="section-title" data-i18n="section.featured">⭐ Featured Work</h2>
     <div class="cards-grid">
       <a href="pages/case-study-aibrahim.html" class="feature-card card-purple">
         <span class="arrow">↗</span>
@@ -284,7 +308,7 @@
     </div>
 
     <!-- Skills -->
-    <h2 class="section-title">🛠️ Tech Stack</h2>
+    <h2 class="section-title" data-i18n="section.skills">🛠️ Tech Stack</h2>
     <div class="cards-grid">
       <div class="feature-card card-purple">
         <h3>AI & GenAI</h3>
@@ -311,7 +335,7 @@
     </blockquote>
 
     <!-- What the AIs Say (Testimonials) -->
-    <h2 class="section-title">🤖 What the AIs Say</h2>
+    <h2 class="section-title" data-i18n="section.testimonials">🤖 What the AIs Say</h2>
     <p style="text-align: center; color: var(--text-gray); margin-bottom: 1.5rem; font-style: italic;">
       Tongue-in-cheek testimonials from my AI collaborators
     </p>
@@ -350,8 +374,8 @@
 
     <!-- Newsletter Signup -->
     <section class="newsletter-section">
-      <h2>📬 Stay in the Loop</h2>
-      <p>Get occasional updates on AI, agents, and building for Africa. No spam, unsubscribe anytime.</p>
+      <h2 data-i18n="section.newsletter">📬 Stay in the Loop</h2>
+      <p data-i18n="newsletter.desc">Get occasional updates on AI, agents, and building for Africa. No spam, unsubscribe anytime.</p>
       <form
         action="https://buttondown.com/api/emails/embed-subscribe/albarka007"
         method="post"
@@ -360,18 +384,18 @@
         class="newsletter-form"
       >
         <input type="email" name="email" placeholder="you@example.com" required />
-        <button type="submit">Subscribe</button>
+        <button type="submit" data-i18n="newsletter.btn">Subscribe</button>
       </form>
       <p class="newsletter-note">Powered by <a href="https://buttondown.com" target="_blank" rel="noopener">Buttondown</a></p>
     </section>
 
     <!-- Contact Form -->
     <section class="contact-section">
-      <h2>Get in Touch</h2>
-      <p class="subtitle">Have a question or want to work together?</p>
+      <h2 data-i18n="section.contact">Get in Touch</h2>
+      <p class="subtitle" data-i18n="contact.subtitle">Have a question or want to work together?</p>
       <form class="contact-form" id="contact-form" action="https://formspree.io/f/mbdgezge" method="POST">
         <label for="name" class="sr-only">Your Name</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="text" id="name" name="name" placeholder="Your Name" data-i18n="contact.name" required>
         
         <label for="email" class="sr-only">Your Email</label>
         <input type="email" id="email" name="email" placeholder="Your Email" required>
@@ -403,9 +427,30 @@
     </footer>
   </div>
 
+  <!-- AIbrahim Chat Widget -->
+  <div id="chat-widget" class="chat-widget">
+    <button id="chat-toggle" class="chat-toggle" aria-label="Chat with AIbrahim">
+      <span class="chat-icon">🤖</span>
+      <span class="chat-close">✕</span>
+    </button>
+    <div id="chat-container" class="chat-container">
+      <div class="chat-header">
+        <span>💬 Chat with AIbrahim</span>
+        <button id="chat-minimize" aria-label="Minimize chat">−</button>
+      </div>
+      <iframe 
+        src="https://kimcomehome-aibrahim.hf.space" 
+        title="AIbrahim Chat"
+        frameborder="0"
+        allow="microphone"
+      ></iframe>
+    </div>
+  </div>
+
   <!-- Scroll to Top -->
   <button id="scrollTop" aria-label="Scroll to top">↑</button>
 
   <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
 </body>
 </html>

@@ -81,6 +81,25 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Staggered section animations */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
+  animation: slideUp 0.4s ease forwards;
+}
+
+.cards-grid,
+.list-items,
+.metrics-section,
+.testimonials-grid,
+.newsletter-section,
+.contact-section {
+  animation: slideUp 0.5s ease forwards;
+}
+
 .container {
   max-width: var(--max-width);
   margin: 0 auto;

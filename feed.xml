@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Agentic Brahim's Blog</title>
+    <description>Thoughts on AI, LLMs, RAG systems, and building intelligent applications for Africa</description>
+    <link>https://agenticbrahim.dev/pages/blog.html</link>
+    <atom:link href="https://agenticbrahim.dev/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <managingEditor>hello@agenticbrahim.dev (Agentic Brahim)</managingEditor>
+    <webMaster>hello@agenticbrahim.dev (Agentic Brahim)</webMaster>
+    <image>
+      <url>https://agenticbrahim.dev/assets/icons/icon-192.svg</url>
+      <title>Agentic Brahim's Blog</title>
+      <link>https://agenticbrahim.dev/</link>
+    </image>
+    
+    <item>
+      <title>Why I'm Building AI for Africa</title>
+      <link>https://agenticbrahim.dev/pages/blog/why-i-build-ai-for-africa.html</link>
+      <guid isPermaLink="true">https://agenticbrahim.dev/pages/blog/why-i-build-ai-for-africa.html</guid>
+      <pubDate>Sat, 25 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Africa has unique challenges that require unique solutions. Here's my journey building AI systems that serve African communities, starting with agriculture and mining.</description>
+      <content:encoded><![CDATA[
+        <p>Africa has unique challenges that require unique solutions. Here's my journey building AI systems that serve African communities, starting with agriculture and mining.</p>
+        <p>Read the full article at <a href="https://agenticbrahim.dev/pages/blog/why-i-build-ai-for-africa.html">agenticbrahim.dev</a></p>
+      ]]></content:encoded>
+      <category>AI</category>
+      <category>Africa</category>
+      <category>Agriculture</category>
+    </item>
+    
+  </channel>
+</rss>

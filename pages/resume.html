@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ibrahim Kabore (Agentic Brahim) - Resume / CV - AI Engineer & Geomatics Specialist">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <title>Resume | Agentic Brahim</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  
+  <!-- Umami Analytics -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="75d57cfb-178c-4222-bdfe-05bec144c185"></script>
+  
+  <style>
+    .resume-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--bg-white);
+      border: 3px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: 6px 6px 0 var(--border-dark);
+    }
+    
+    .resume-header {
+      text-align: center;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid var(--border-dark);
+      margin-bottom: 1.5rem;
+    }
+    
+    .resume-header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .resume-contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-gray);
+    }
+    
+    .resume-contact a {
+      color: var(--text-dark);
+    }
+    
+    .resume-section {
+      margin-bottom: 1.5rem;
+    }
+    
+    .resume-section h2 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent-purple);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .resume-item {
+      margin-bottom: 1.25rem;
+    }
+    
+    .resume-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+    
+    .resume-item-title {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    
+    .resume-item-date {
+      font-size: 0.85rem;
+      color: var(--text-gray);
+    }
+    
+    .resume-item-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      margin-bottom: 0.5rem;
+    }
+    
+    .resume-item ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .resume-item li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.35rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    
+    .resume-item li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent-purple);
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    
+    .skill-category {
+      background: var(--bg-cream);
+      padding: 0.75rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .skill-category strong {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--accent-purple);
+      margin-bottom: 0.25rem;
+    }
+    
+    .skill-category span {
+      font-size: 0.9rem;
+    }
+    
+    .download-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--accent-green);
+      border: 2px solid var(--border-dark);
+      border-radius: var(--radius);
+      font-weight: 600;
+      box-shadow: 4px 4px 0 var(--border-dark);
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    
+    .download-btn:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 var(--border-dark);
+    }
+    
+    .download-btn.secondary {
+      background: var(--bg-white);
+    }
+    
+    @media print {
+      body { background: white; }
+      .container > *:not(.resume-container) { display: none; }
+      .download-actions { display: none; }
+      nav { display: none !important; }
+      header { display: none !important; }
+      footer { display: none !important; }
+      #theme-toggle { display: none !important; }
+      .resume-container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+
+  <div class="container">
+    <!-- Header -->
+    <header style="text-align: center; padding: 2rem 0;">
+      <h1 class="hero-name" style="font-size: 2rem; justify-content: center;">
+        📄 <span class="name-highlight">Resume</span>
+      </h1>
+      <p class="tagline">AI Engineer & Geomatics Specialist</p>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="resources.html">Resources</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+    </header>
+
+    <!-- Download Actions -->
+    <div class="download-actions">
+      <button onclick="window.print()" class="download-btn">
+        📥 Download PDF
+      </button>
+      <a href="mailto:hello@agenticbrahim.dev?subject=Hiring Inquiry" class="download-btn secondary">
+        📧 Contact for Hire
+      </a>
+    </div>
+
+    <!-- Resume Content -->
+    <div class="resume-container">
+      <div class="resume-header">
+        <h1>Ibrahim Kabore</h1>
+        <div class="resume-contact">
+          <span>📍 Ben Guerir, Morocco</span>
+          <a href="mailto:hello@agenticbrahim.dev">📧 hello@agenticbrahim.dev</a>
+          <a href="https://agenticbrahim.dev" target="_blank">🌐 agenticbrahim.dev</a>
+          <a href="https://linkedin.com/in/ibrahimkabore" target="_blank">💼 LinkedIn</a>
+          <a href="https://github.com/MORAWA-dev" target="_blank">🐙 GitHub</a>
+        </div>
+      </div>
+
+      <!-- Objective -->
+      <section class="resume-section">
+        <h2>🎯 Objective</h2>
+        <p>Geomatics & Environmental Data Science Engineer (M.Sc., 2025) pivoting into <strong>AI Engineering</strong>. Specialized in building production-grade ML systems for agricultural monitoring. AI-literate with hands-on experience in <strong>LLM Engineering, RAG orchestration, and QLoRA fine-tuning</strong>. Passionate about deploying Agentic AI to solve complex environmental and agronomic challenges in Africa.</p>
+      </section>
+
+      <!-- Skills -->
+      <section class="resume-section">
+        <h2>🛠️ Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <strong>AI & GenAI</strong>
+            <span>RAG Systems, Agentic Workflows (CrewAI, Nvidia NeMo), QLoRA Fine-tuning, LangChain</span>
+          </div>
+          <div class="skill-category">
+            <strong>Machine Learning</strong>
+            <span>Scikit-learn, PyTorch, Random Forest, PLSR, MLOps</span>
+          </div>
+          <div class="skill-category">
+            <strong>Geospatial AI</strong>
+            <span>Google Earth Engine, Sentinel-1/2 SAR, QGIS, Rasterio, GDAL</span>
+          </div>
+          <div class="skill-category">
+            <strong>Languages & Tools</strong>
+            <span>Python (Advanced), R (Shiny), SQL, Docker, Git, LaTeX</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="resume-section">
+        <h2>💼 Experience</h2>
+        
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-item-title">Data Science Intern (Soil Spectroscopy & ML Modeling)</span>
+            <span class="resume-item-date">Feb 2025 – Jul 2025</span>
+          </div>
+          <div class="resume-item-subtitle">UM6P - Center for Remote Sensing Applications (CRSA) · Ben Guerir, Morocco</div>
+          <ul>
+            <li>Engineered automated pipelines for soil spectral data (Vis-NIR), utilizing SNV/MSC and PCA for standardization</li>
+            <li>Trained Random Forest and SVR models to predict Soil Organic Matter with high precision for Moroccan soil</li>
+            <li>Established "Trust & Quality" framework to calculate model uncertainty (Confidence Intervals)</li>
+            <li>Harmonized multi-source soil libraries across Mediterranean datasets, ensuring QA/QC for large-scale integration</li>
+          </ul>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-item-title">Remote Sensing Researcher (Radar-Based Monitoring)</span>
+            <span class="resume-item-date">Feb 2024 – Jul 2025</span>
+          </div>
+          <div class="resume-item-subtitle">Research Project (Sidi Bennour Region) · Morocco</div>
+          <ul>
+            <li>Built cloud-based monitoring workflows using Google Earth Engine to process multi-temporal Sentinel-1 (SAR)</li>
+            <li>Integrated climate data (CHIRPS Rainfall, ERA5) with vegetation indices to model crop response to thermal stress</li>
+            <li>Conducted time-series analysis to differentiate resilience patterns between irrigated and rainfed systems</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="resume-section">
+        <h2>🚀 Projects</h2>
+        
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-item-title">Agentic AI Chatbot for Agriculture</span>
+            <span class="resume-item-date">2025</span>
+          </div>
+          <div class="resume-item-subtitle">Python, RAG, QLoRA, CrewAI</div>
+          <ul>
+            <li>Developed AI-powered agent using RAG to assist farmers with context-aware agronomic advice</li>
+            <li>Implemented fine-tuning of open-source models (Llama) using QLoRA for domain-specific accuracy</li>
+            <li>Orchestrated multi-agent systems using CrewAI and Nvidia NeMo for complex query routing</li>
+          </ul>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-item-title">Predictive Soil Analytics Dashboard</span>
+            <span class="resume-item-date">2025</span>
+          </div>
+          <div class="resume-item-subtitle">R, Shiny, Machine Learning</div>
+          <ul>
+            <li>Built interactive dashboard for real-time soil property predictions</li>
+            <li>Implemented backend inference using pre-trained Chemometric ML models with "Farmer Guide" interface</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="resume-section">
+        <h2>🎓 Education</h2>
+        
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-item-title">Master of Science in Geomatics & Environment</span>
+            <span class="resume-item-date">Jul 2025</span>
+          </div>
+          <div class="resume-item-subtitle">University Sultan Moulay Slimane (FST Béni Mellal) · Morocco</div>
+          <p style="font-size: 0.9rem; margin-top: 0.25rem;">Specialization: Machine Learning</p>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-item-title">Bachelor of Science in Earth Sciences</span>
+            <span class="resume-item-date">Sep 2023</span>
+          </div>
+          <div class="resume-item-subtitle">University Sultan Moulay Slimane (FST Béni Mellal) · Morocco</div>
+          <p style="font-size: 0.9rem; margin-top: 0.25rem;">Geomatics & Land Planning</p>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section class="resume-section">
+        <h2>📜 Certifications</h2>
+        <div class="resume-item">
+          <ul>
+            <li><strong>AI Engineering Track:</strong> Agentic AI with Andrew Ng & Nvidia's NeMo Agent Toolkit</li>
+            <li><strong>AI Engineer Core Track:</strong> LLM Engineering, RAG Implementation, QLoRA Fine-tuning</li>
+            <li><strong>Machine Learning Specialization:</strong> Stanford Online / DeepLearning.AI (99% Completed)</li>
+            <li><strong>Aspire Leadership Program:</strong> 2025</li>
+            <li><strong>NASA ARSET:</strong> Remote Sensing Certification</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Agentic Brahim · <a href="../index.html">← Back to Home</a></p>
+    </footer>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

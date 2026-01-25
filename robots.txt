@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://albarka.github.io/sitemap.xml
+Sitemap: https://agenticbrahim.dev/sitemap.xml
 
 # Crawl-delay (optional, be nice to servers)
 Crawl-delay: 1

@@ -1,0 +1,11 @@
+# robots.txt for albarka.github.io
+# Agentic Brahim - AI Engineer Portfolio
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://albarka.github.io/sitemap.xml
+
+# Crawl-delay (optional, be nice to servers)
+Crawl-delay: 1

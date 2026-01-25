@@ -795,6 +795,43 @@ body.dark-theme .quote-card {
 .toast.success { border-left: 4px solid var(--accent-green); }
 .toast.error { border-left: 4px solid #e57373; }
 
+/* GitHub Widget */
+.github-widget {
+  background: var(--bg-white);
+  border: 2px solid var(--border-dark);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 4px 4px 0 var(--border-dark);
+  transition: all 0.15s ease;
+}
+
+.github-widget:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--border-dark);
+}
+
+.github-chart {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.github-cta {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-gray);
+}
+
+.github-cta a {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+body.dark-theme .github-chart {
+  filter: invert(1) hue-rotate(180deg);
+}
+
 /* Theme Toggle */
 #theme-toggle {
   position: fixed;

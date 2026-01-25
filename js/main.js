@@ -15,7 +15,62 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Contact Form (if exists)
   initContactForm();
+  
+  // Typewriter Effect
+  initTypewriter();
 });
+
+/* Typewriter Effect */
+function initTypewriter() {
+  const element = document.getElementById('typewriter');
+  if (!element) return;
+  
+  const phrases = [
+    'AI Agents for Africa 🌍',
+    'RAG Systems 🔍',
+    'Fine-tuned LLMs 🧠',
+    'Geospatial AI 🗺️',
+    'Multi-Agent Workflows 🤖',
+    'Intelligent Chatbots 💬'
+  ];
+  
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typingSpeed = 100;
+  
+  function type() {
+    const currentPhrase = phrases[phraseIndex];
+    
+    if (isDeleting) {
+      element.textContent = currentPhrase.substring(0, charIndex - 1);
+      charIndex--;
+      typingSpeed = 50;
+    } else {
+      element.textContent = currentPhrase.substring(0, charIndex + 1);
+      charIndex++;
+      typingSpeed = 100;
+    }
+    
+    // Finished typing the word
+    if (!isDeleting && charIndex === currentPhrase.length) {
+      isDeleting = true;
+      typingSpeed = 2000; // Pause before deleting
+    }
+    
+    // Finished deleting
+    if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      typingSpeed = 500; // Pause before next word
+    }
+    
+    setTimeout(type, typingSpeed);
+  }
+  
+  // Start typing
+  setTimeout(type, 1000);
+}
 
 /* Hero Color Randomization */
 function initHeroColors() {

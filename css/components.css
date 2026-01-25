@@ -71,6 +71,29 @@ nav a.active {
   padding-top: 1rem;
 }
 
+/* Typewriter Effect */
+.typewriter-text {
+  color: var(--accent-purple);
+  font-weight: 600;
+  background: linear-gradient(120deg, var(--accent-purple), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cursor {
+  display: inline-block;
+  color: var(--accent-purple);
+  animation: blink 1s step-end infinite;
+  font-weight: 300;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
 /* Hero Photo */
 .hero-photo-wrapper {
   position: absolute;

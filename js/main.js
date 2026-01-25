@@ -105,20 +105,38 @@ function initThemeToggle() {
   const toggle = document.getElementById('theme-toggle');
   if (!toggle) return;
   
+  // Wrap content in icon span for animation
+  const icon = document.createElement('span');
+  icon.className = 'icon';
+  
   // Check saved preference
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
     document.body.classList.add('dark-theme');
-    toggle.textContent = '☀️';
+    icon.textContent = '☀️';
   } else {
-    toggle.textContent = '🌙';
+    icon.textContent = '🌙';
   }
   
+  toggle.textContent = '';
+  toggle.appendChild(icon);
+  
   toggle.addEventListener('click', function() {
-    document.body.classList.toggle('dark-theme');
-    const isDark = document.body.classList.contains('dark-theme');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    toggle.textContent = isDark ? '☀️' : '🌙';
+    // Add animation class
+    toggle.classList.add('animate');
+    
+    // Toggle theme after slight delay for effect
+    setTimeout(() => {
+      document.body.classList.toggle('dark-theme');
+      const isDark = document.body.classList.contains('dark-theme');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      icon.textContent = isDark ? '☀️' : '🌙';
+    }, 150);
+    
+    // Remove animation class
+    setTimeout(() => {
+      toggle.classList.remove('animate');
+    }, 500);
   });
 }
 

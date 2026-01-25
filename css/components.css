@@ -807,17 +807,34 @@ body.dark-theme .quote-card {
   border-radius: 50%;
   cursor: pointer;
   font-size: 1.1rem;
-  transition: all 0.15s ease;
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 3px 3px 0 var(--border-dark);
+  overflow: hidden;
 }
 
 #theme-toggle:hover {
   transform: translate(3px, 3px);
   box-shadow: 0 0 0 var(--border-dark);
+}
+
+/* Sun/Moon Icon Container */
+#theme-toggle .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#theme-toggle.animate .icon {
+  transform: rotate(360deg) scale(1.2);
+}
+
+/* Dark mode - sun rises */
+body.dark-theme #theme-toggle .icon {
+  filter: drop-shadow(0 0 4px #ffd700);
 }
 
 /* Scroll Top */

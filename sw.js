@@ -1,11 +1,17 @@
-const CACHE_NAME = 'agenticbrahim-v1';
+const CACHE_NAME = 'agenticbrahim-v2';
 const urlsToCache = [
   '/',
   '/index.html',
   '/css/base.css',
   '/css/components.css',
+  '/css/terminal.css',
+  '/css/confetti.css',
   '/js/main.js',
+  '/js/terminal.js',
+  '/js/confetti.js',
+  '/js/i18n.js',
   '/assets/icons/favicon.svg',
+  '/assets/images/water.webp',
   '/assets/images/water.jpg'
 ];
 

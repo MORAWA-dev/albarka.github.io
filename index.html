@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/terminal.css">
+  <link rel="stylesheet" href="css/confetti.css">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="Agentic Brahim's Blog" href="feed.xml">
   
@@ -383,7 +384,7 @@
         action="https://buttondown.com/api/emails/embed-subscribe/albarka007"
         method="post"
         target="popupwindow"
-        onsubmit="window.open('https://buttondown.com/albarka007', 'popupwindow')"
+        onsubmit="window.open('https://buttondown.com/albarka007', 'popupwindow'); document.dispatchEvent(new CustomEvent('newsletter-subscribed')); return true;"
         class="newsletter-form"
       >
         <input type="email" name="email" placeholder="you@example.com" required />
@@ -459,5 +460,6 @@
   <script src="js/main.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/terminal.js"></script>
+  <script src="js/confetti.js"></script>
 </body>
 </html>

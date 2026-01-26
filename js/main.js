@@ -245,6 +245,8 @@ function initContactForm() {
       if (response.ok) {
         showToast('Message Sent!', 'Thanks for reaching out. I\'ll get back to you soon.', 'success');
         form.reset();
+        // Trigger confetti celebration
+        document.dispatchEvent(new CustomEvent('contact-submitted'));
       } else {
         throw new Error('Form submission failed');
       }

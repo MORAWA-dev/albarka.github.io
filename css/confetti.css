@@ -1,0 +1,79 @@
+/* ================================
+   Confetti & Achievement Styles
+   ================================ */
+
+/* Achievement Toast Notification */
+.achievement-toast {
+  position: fixed;
+  top: 2rem;
+  right: -400px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, var(--accent) 0%, #8b7cf7 100%);
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(108, 92, 231, 0.4);
+  z-index: 100000;
+  transition: right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-family: var(--font-main);
+}
+
+.achievement-toast.show {
+  right: 2rem;
+}
+
+.achievement-icon {
+  font-size: 2rem;
+  animation: bounce 0.6s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.achievement-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.achievement-title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.achievement-subtitle {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Celebrate button pulse effect */
+.celebrate-ready {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(108, 92, 231, 0);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .achievement-toast {
+    right: -100%;
+    left: auto;
+    width: calc(100% - 2rem);
+    margin: 0 1rem;
+  }
+  
+  .achievement-toast.show {
+    right: 1rem;
+  }
+}

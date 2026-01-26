@@ -9,6 +9,7 @@ const translations = {
     'nav.home': 'Home',
     'nav.about': 'About',
     'nav.projects': 'Projects',
+    'nav.speaking': 'Speaking',
     'nav.resources': 'Resources',
     'nav.blog': 'Blog',
     
@@ -66,6 +67,7 @@ const translations = {
     'nav.home': 'Accueil',
     'nav.about': 'À propos',
     'nav.projects': 'Projets',
+    'nav.speaking': 'Conférences',
     'nav.resources': 'Ressources',
     'nav.blog': 'Blog',
     

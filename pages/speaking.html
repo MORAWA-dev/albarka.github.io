@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speaking & Talks - Agentic Brahim</title>
+  <meta name="description" content="Conference talks, YouTube videos, and presentations on AI, Geomatics, and Mining Engineering by Ibrahim Kabore.">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://agenticbrahim.dev/pages/speaking.html">
+  <meta property="og:title" content="Speaking & Talks - Agentic Brahim">
+  <meta property="og:description" content="Conference talks, YouTube videos, and presentations on AI, Geomatics, and Mining Engineering.">
+  <meta property="og:image" content="https://agenticbrahim.dev/assets/images/og-card.png">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Speaking & Talks - Agentic Brahim">
+  <meta name="twitter:description" content="Conference talks, YouTube videos, and presentations on AI, Geomatics, and Mining.">
+  <meta name="twitter:image" content="https://agenticbrahim.dev/assets/images/og-card.png">
+  
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  
+  <!-- Umami Analytics -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="75d57cfb-178c-4222-bdfe-05bec144c185"></script>
+  
+  <style>
+    /* Speaking Page Specific Styles */
+    .speaking-hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--accent) 0%, #8b7cf7 100%);
+      color: white;
+      border-radius: 20px;
+      margin-bottom: 3rem;
+    }
+    
+    .speaking-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .speaking-hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .speaking-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    /* YouTube Section */
+    .youtube-section {
+      margin-bottom: 4rem;
+    }
+    
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    .section-header h2 {
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .youtube-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #ff0000;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    
+    .youtube-badge:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Video Grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    
+    .video-card {
+      background: var(--surface);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .video-thumbnail {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #1a1a1a;
+    }
+    
+    .video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .video-info {
+      padding: 1.5rem;
+    }
+    
+    .video-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+    
+    .video-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+    
+    /* Talks Section */
+    .talks-section {
+      margin-bottom: 4rem;
+    }
+    
+    .talk-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .talk-card {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      align-items: center;
+      transition: border-color 0.2s;
+    }
+    
+    .talk-card:hover {
+      border-color: var(--accent);
+    }
+    
+    .talk-date {
+      background: var(--accent);
+      color: white;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      text-align: center;
+      min-width: 80px;
+    }
+    
+    .talk-date .month {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .talk-date .day {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .talk-date .year {
+      font-size: 0.75rem;
+      opacity: 0.8;
+    }
+    
+    .talk-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+    
+    .talk-event {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+    
+    .talk-location {
+      color: var(--text-light);
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    
+    .talk-links {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .talk-link {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: var(--text-main);
+      transition: all 0.2s;
+    }
+    
+    .talk-link:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+    
+    /* Upcoming Badge */
+    .upcoming-badge {
+      background: #00b894;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    
+    /* CTA Section */
+    .speaking-cta {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 20px;
+    }
+    
+    .speaking-cta h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    .speaking-cta p {
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .cta-btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    
+    .cta-btn.primary {
+      background: var(--accent);
+      color: white;
+    }
+    
+    .cta-btn.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(108, 92, 231, 0.3);
+    }
+    
+    .cta-btn.secondary {
+      border: 2px solid var(--border);
+      color: var(--text-main);
+    }
+    
+    .cta-btn.secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .talk-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .talk-date {
+        display: inline-flex;
+        gap: 0.5rem;
+        align-items: baseline;
+        justify-content: center;
+      }
+      
+      .talk-links {
+        justify-content: center;
+      }
+      
+      .speaking-stats {
+        gap: 2rem;
+      }
+    }
+    
+    /* Dark theme */
+    body.dark-theme .video-card {
+      background: #2a2a2a;
+      border-color: #444;
+    }
+    
+    body.dark-theme .talk-card {
+      background: #2a2a2a;
+      border-color: #444;
+    }
+    
+    body.dark-theme .speaking-cta {
+      background: #2a2a2a;
+      border-color: #444;
+    }
+  </style>
+</head>
+<body>
+  <!-- Theme Toggle -->
+  <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+  
+  <nav class="page-nav">
+    <a href="../index.html" class="nav-back">← Back Home</a>
+  </nav>
+
+  <main class="page-content">
+    <!-- Hero -->
+    <section class="speaking-hero">
+      <h1>🎤 Speaking & Talks</h1>
+      <p>Sharing knowledge on AI, Geomatics, Remote Sensing, and building technology for Africa through conferences, workshops, and YouTube.</p>
+      
+      <div class="speaking-stats">
+        <div class="stat-item">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Conference Talks</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">YouTube Videos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1K+</div>
+          <div class="stat-label">Total Views</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- YouTube Section -->
+    <section class="youtube-section">
+      <div class="section-header">
+        <h2>📺 Featured Videos</h2>
+        <a href="https://www.youtube.com/@geomatics101k" target="_blank" rel="noopener" class="youtube-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          Subscribe
+        </a>
+      </div>
+
+      <div class="video-grid">
+        <!-- Video 1 - Replace VIDEO_ID with actual YouTube video IDs -->
+        <article class="video-card">
+          <div class="video-thumbnail">
+            <iframe 
+              src="https://www.youtube.com/embed/VIDEO_ID_1" 
+              title="Introduction to Remote Sensing"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">Introduction to Remote Sensing with Python</h3>
+            <div class="video-meta">
+              <span>🎬 Tutorial</span>
+              <span>📅 2024</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video 2 -->
+        <article class="video-card">
+          <div class="video-thumbnail">
+            <iframe 
+              src="https://www.youtube.com/embed/VIDEO_ID_2" 
+              title="GIS Basics Tutorial"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">GIS Fundamentals for Beginners</h3>
+            <div class="video-meta">
+              <span>🎬 Tutorial</span>
+              <span>📅 2024</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video 3 -->
+        <article class="video-card">
+          <div class="video-thumbnail">
+            <iframe 
+              src="https://www.youtube.com/embed/VIDEO_ID_3" 
+              title="AI for Geospatial Analysis"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">AI-Powered Geospatial Analysis</h3>
+            <div class="video-meta">
+              <span>🎬 Deep Dive</span>
+              <span>📅 2024</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Conference Talks -->
+    <section class="talks-section">
+      <h2>🗣️ Conference Talks & Workshops</h2>
+      
+      <div class="talk-list">
+        <!-- Talk 1 - Add your actual talks -->
+        <article class="talk-card">
+          <div class="talk-date">
+            <div class="month">DEC</div>
+            <div class="day">15</div>
+            <div class="year">2024</div>
+          </div>
+          <div class="talk-info">
+            <span class="upcoming-badge">Upcoming</span>
+            <h3>Building AI Agents for African Agriculture</h3>
+            <p class="talk-event">AI for Africa Summit</p>
+            <p class="talk-location">📍 Virtual Event</p>
+          </div>
+          <div class="talk-links">
+            <a href="#" class="talk-link">Register</a>
+          </div>
+        </article>
+
+        <!-- Talk 2 -->
+        <article class="talk-card">
+          <div class="talk-date">
+            <div class="month">OCT</div>
+            <div class="day">20</div>
+            <div class="year">2024</div>
+          </div>
+          <div class="talk-info">
+            <h3>Remote Sensing for Mining Exploration</h3>
+            <p class="talk-event">Geospatial Tech Conference</p>
+            <p class="talk-location">📍 Ouagadougou, Burkina Faso</p>
+          </div>
+          <div class="talk-links">
+            <a href="#" class="talk-link">Slides</a>
+            <a href="#" class="talk-link">Video</a>
+          </div>
+        </article>
+
+        <!-- Talk 3 -->
+        <article class="talk-card">
+          <div class="talk-date">
+            <div class="month">JUN</div>
+            <div class="day">05</div>
+            <div class="year">2024</div>
+          </div>
+          <div class="talk-info">
+            <h3>Introduction to LLMs and RAG Systems</h3>
+            <p class="talk-event">FST Béni Mellal Workshop</p>
+            <p class="talk-location">📍 Béni Mellal, Morocco</p>
+          </div>
+          <div class="talk-links">
+            <a href="#" class="talk-link">Slides</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Speaking CTA -->
+    <section class="speaking-cta">
+      <h2>🎙️ Invite Me to Speak</h2>
+      <p>I love sharing knowledge about AI, geospatial technology, and building solutions for Africa. Available for conferences, workshops, and podcasts.</p>
+      
+      <div class="cta-buttons">
+        <a href="mailto:hello@agenticbrahim.dev?subject=Speaking%20Invitation" class="cta-btn primary">📧 Get in Touch</a>
+        <a href="https://www.youtube.com/@geomatics101k" target="_blank" rel="noopener" class="cta-btn secondary">📺 Watch on YouTube</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <p>© 2024 Agentic Brahim. Built with ❤️ and 🤖</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

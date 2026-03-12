@@ -13,20 +13,12 @@ if ('serviceWorker' in navigator) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Randomize Hero Colors
   initHeroColors();
-  
-  // Theme Toggle
   initThemeToggle();
-  
-  // Scroll to Top Button
   initScrollTop();
-  
-  // Contact Form (if exists)
   initContactForm();
-  
-  // Typewriter Effect
   initTypewriter();
+  initScrollReveal();
 });
 
 /* Typewriter Effect */
@@ -286,12 +278,30 @@ function initChatWidget() {
   const widget = document.getElementById('chat-widget');
   const toggle = document.getElementById('chat-toggle');
   const minimize = document.getElementById('chat-minimize');
+  const label = document.getElementById('chat-label');
+  const greeting = document.getElementById('chat-greeting');
   
   if (!widget || !toggle) return;
   
-  toggle.addEventListener('click', () => {
+  function openChat() {
     widget.classList.toggle('open');
-  });
+    if (greeting) greeting.classList.remove('show');
+    const iframe = widget.querySelector('iframe[data-src]');
+    if (iframe) {
+      iframe.src = iframe.dataset.src;
+      iframe.removeAttribute('data-src');
+    }
+  }
+  
+  toggle.addEventListener('click', openChat);
+  
+  if (label) {
+    label.addEventListener('click', () => {
+      if (!widget.classList.contains('open')) {
+        openChat();
+      }
+    });
+  }
   
   if (minimize) {
     minimize.addEventListener('click', () => {
@@ -299,13 +309,46 @@ function initChatWidget() {
     });
   }
   
-  // Close on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && widget.classList.contains('open')) {
       widget.classList.remove('open');
     }
   });
+  
+  if (greeting && !sessionStorage.getItem('chatGreetingShown')) {
+    setTimeout(() => {
+      if (!widget.classList.contains('open')) {
+        greeting.classList.add('show');
+        sessionStorage.setItem('chatGreetingShown', '1');
+        setTimeout(() => greeting.classList.remove('show'), 6000);
+      }
+    }, 3000);
+  }
 }
 
-// Initialize chat widget on load
 document.addEventListener('DOMContentLoaded', initChatWidget);
+
+/* Scroll-Triggered Section Reveal */
+function initScrollReveal() {
+  const targets = document.querySelectorAll(
+    '.section-title, .cards-grid, .list-items, .metrics-section, ' +
+    '.testimonials-grid, .newsletter-section, .contact-section, ' +
+    '.timeline, .github-widget, .quote-card, .project-card, ' +
+    '.live-demo-section, .feature-card.card-orange'
+  );
+  if (!targets.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  targets.forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+}

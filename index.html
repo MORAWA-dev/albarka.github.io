@@ -244,6 +244,14 @@
     <!-- HuggingFace Stats -->
     <h2 class="section-title">🤗 HuggingFace Highlights</h2>
     <div class="list-items">
+      <a href="https://huggingface.co/kimcomehome/segformer-b0-tileforge-demo-v1" target="_blank" class="list-item" style="border-left: 4px solid var(--accent-green);">
+        <span class="item-icon" style="background: var(--accent-green)">🗺️</span>
+        <div class="item-content">
+          <div class="item-title">SegFormer TileForge <span class="item-tag new">New</span></div>
+          <div class="item-desc">Vision Transformer for geospatial tile segmentation</div>
+        </div>
+        <span class="item-arrow">→</span>
+      </a>
       <a href="https://huggingface.co/spaces/kimcomehome/AIbrahim" target="_blank" class="list-item">
         <span class="item-icon" style="background: var(--accent-purple)">💬</span>
         <div class="item-content">
@@ -252,11 +260,11 @@
         </div>
         <span class="item-arrow">→</span>
       </a>
-      <a href="https://huggingface.co/spaces/kimcomehome/Brochure_Generator" target="_blank" class="list-item">
-        <span class="item-icon" style="background: var(--accent-blue)">📄</span>
+      <a href="https://huggingface.co/datasets/kimcomehome/tileforge-s2-dw-demo-v1" target="_blank" class="list-item" style="border-left: 4px solid var(--accent-orange);">
+        <span class="item-icon" style="background: var(--accent-orange)">🛰️</span>
         <div class="item-content">
-          <div class="item-title">Brochure Generator <span class="item-tag">Space</span></div>
-          <div class="item-desc">AI-powered marketing brochure creator</div>
+          <div class="item-title">TileForge S2-DW <span class="item-tag new">New</span></div>
+          <div class="item-desc">Sentinel-2 & Dynamic World geospatial tiles</div>
         </div>
         <span class="item-arrow">→</span>
       </a>
@@ -269,7 +277,7 @@
         <span class="item-arrow">→</span>
       </a>
       <a href="https://huggingface.co/datasets/kimcomehome/system-prompts-multi-agent-systems" target="_blank" class="list-item">
-        <span class="item-icon" style="background: var(--accent-green)">📊</span>
+        <span class="item-icon" style="background: var(--accent-blue)">📊</span>
         <div class="item-content">
           <div class="item-title">Multi-Agent System Prompts <span class="item-tag">Dataset</span></div>
           <div class="item-desc">Curated prompts for agent orchestration</div>
@@ -320,19 +328,19 @@
     <div class="cards-grid">
       <div class="feature-card card-purple">
         <h3>AI & GenAI</h3>
-        <p>RAG Systems, CrewAI, QLoRA, LangChain, Nvidia NeMo</p>
+        <p>RAG Systems, Agentic AI, CrewAI, QLoRA, LangChain, Gradio, Nvidia NeMo</p>
       </div>
       <div class="feature-card card-blue">
         <h3>Machine Learning</h3>
-        <p>Scikit-learn, PyTorch, Random Forest, PLSR, MLOps</p>
+        <p>HuggingFace Transformers, PyTorch, Scikit-learn, Random Forest, PLSR, MLOps</p>
       </div>
       <div class="feature-card card-green">
         <h3>Geospatial AI</h3>
-        <p>Google Earth Engine, Sentinel SAR, QGIS, Rasterio</p>
+        <p>Google Earth Engine, SegFormer, Sentinel SAR, QGIS, Rasterio</p>
       </div>
       <div class="feature-card card-orange">
         <h3>Languages & Tools</h3>
-        <p>Python, R Shiny, SQL, Docker, Git</p>
+        <p>Python, R Shiny, SQL, Docker, Git, Cursor AI</p>
       </div>
     </div>
 
@@ -437,6 +445,10 @@
 
   <!-- AIbrahim Chat Widget -->
   <div id="chat-widget" class="chat-widget">
+    <div class="chat-label" id="chat-label">Ask AIbrahim ✨</div>
+    <div class="chat-greeting" id="chat-greeting">
+      👋 Hi! I'm <strong>AIbrahim</strong> — ask me anything about my work!
+    </div>
     <button id="chat-toggle" class="chat-toggle" aria-label="Chat with AIbrahim">
       <span class="chat-icon">🤖</span>
       <span class="chat-close">✕</span>
@@ -447,7 +459,7 @@
         <button id="chat-minimize" aria-label="Minimize chat">−</button>
       </div>
       <iframe 
-        src="https://kimcomehome-aibrahim.hf.space" 
+        data-src="https://kimcomehome-aibrahim.hf.space" 
         title="AIbrahim Chat"
         frameborder="0"
         allow="microphone"

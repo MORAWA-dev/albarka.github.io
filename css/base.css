@@ -81,23 +81,16 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Staggered section animations */
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Scroll-triggered reveal animations (driven by IntersectionObserver in main.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
 
-.section-title {
-  animation: slideUp 0.4s ease forwards;
-}
-
-.cards-grid,
-.list-items,
-.metrics-section,
-.testimonials-grid,
-.newsletter-section,
-.contact-section {
-  animation: slideUp 0.5s ease forwards;
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .container {
@@ -141,6 +134,18 @@ a:hover {
 /* Responsive Base */
 @media (max-width: 600px) {
   .container { padding: 1.5rem 1rem; }
+}
+
+/* Keyboard Focus Styles */
+:focus-visible {
+  outline: 3px solid var(--accent-purple);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--accent-purple);
+  outline-offset: 3px;
 }
 
 /* Screen Reader Only - Accessibility */

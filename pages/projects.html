@@ -70,17 +70,17 @@
           Interact with my AI directly in your browser — no signup required!
         </p>
         
-        <div class="hf-space-embed" style="background: var(--surface); border: 2px solid var(--border); border-radius: 16px; overflow: hidden;">
-          <div class="hf-space-header" style="padding: 1rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border);">
+        <div class="hf-space-embed" style="background: var(--bg-white); border: 2px solid var(--border-dark); border-radius: 16px; overflow: hidden;">
+          <div class="hf-space-header" style="padding: 1rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-dark);">
             <div style="display: flex; align-items: center; gap: 0.75rem;">
               <span style="font-size: 1.5rem;">🤗</span>
               <div>
-                <strong style="color: var(--text-main);">AIbrahim Chat</strong>
+                <strong style="color: var(--text-dark);">AIbrahim Chat</strong>
                 <span style="display: block; font-size: 0.85rem; color: var(--text-light);">Ask me anything about my projects!</span>
               </div>
             </div>
             <a href="https://huggingface.co/spaces/kimcomehome/AIbrahim" target="_blank" 
-               style="padding: 0.5rem 1rem; background: var(--accent); color: white; border-radius: 8px; text-decoration: none; font-size: 0.85rem; font-weight: 600;">
+               style="padding: 0.5rem 1rem; background: var(--accent-purple); color: var(--text-dark); border-radius: 8px; text-decoration: none; font-size: 0.85rem; font-weight: 600;">
               Open Full Screen ↗
             </a>
           </div>
@@ -95,7 +95,7 @@
         </div>
         
         <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--text-light);">
-          ⚡ Powered by <a href="https://huggingface.co/spaces" target="_blank" style="color: var(--accent);">HuggingFace Spaces</a>
+          ⚡ Powered by <a href="https://huggingface.co/spaces" target="_blank" style="color: var(--accent-purple);">HuggingFace Spaces</a>
         </p>
       </section>
 
@@ -114,8 +114,16 @@
       </div>
 
       <!-- Fine-tuned Models -->
-      <h2 class="section-title">🧠 Fine-tuned Models</h2>
+      <h2 class="section-title">🧠 Models</h2>
       <div class="list-items">
+        <a href="https://huggingface.co/kimcomehome/segformer-b0-tileforge-demo-v1" target="_blank" class="list-item" style="border-left: 4px solid var(--accent-green);">
+          <span class="item-icon" style="background: var(--accent-green)">🗺️</span>
+          <div class="item-content">
+            <div class="item-title">SegFormer-B0 TileForge <span class="item-tag new">New</span></div>
+            <div class="item-desc">Vision Transformer for geospatial tile segmentation • Sentinel-2</div>
+          </div>
+          <span class="item-arrow">→</span>
+        </a>
         <a href="https://huggingface.co/kimcomehome/Llama-3-ELI5-GGUF" target="_blank" class="list-item">
           <span class="item-icon" style="background: var(--accent-blue)">🦙</span>
           <div class="item-content">
@@ -137,6 +145,11 @@
       <!-- Datasets -->
       <h2 class="section-title">📊 Datasets</h2>
       <div class="cards-grid">
+        <a href="https://huggingface.co/datasets/kimcomehome/tileforge-s2-dw-demo-v1" target="_blank" class="feature-card card-orange">
+          <span class="arrow">↗</span>
+          <h3>TileForge S2-DW Demo</h3>
+          <p>Sentinel-2 & Dynamic World geospatial tiles for segmentation</p>
+        </a>
         <a href="https://huggingface.co/datasets/kimcomehome/system-prompts-multi-agent-systems" target="_blank" class="feature-card card-blue">
           <span class="arrow">↗</span>
           <h3>Multi-Agent Prompts</h3>

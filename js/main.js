@@ -28,7 +28,13 @@ function initNewsletterForm() {
   const form = document.getElementById('newsletter-form');
   if (!form) return;
 
-  form.addEventListener('submit', function() {
+  form.addEventListener('submit', function(e) {
+    // Honeypot: block bot submissions that fill the hidden field.
+    const honeypot = form.querySelector('input[name="_gotcha"]');
+    if (honeypot && honeypot.value.trim() !== '') {
+      e.preventDefault();
+      return;
+    }
     // Open Buttondown in the popup window the form targets, then let the
     // native submission proceed into that window.
     window.open('https://buttondown.com/albarka007', 'popupwindow');
@@ -246,7 +252,20 @@ function initContactForm() {
   
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
-    
+
+    // Honeypot: if a bot filled the hidden field, silently drop the submission.
+    const honeypot = form.querySelector('input[name="_gotcha"]');
+    if (honeypot && honeypot.value.trim() !== '') {
+      return;
+    }
+
+    // Basic client-side validation (in addition to native required/type=email).
+    const email = form.querySelector('input[type="email"]');
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+      showToast('Check your email', 'Please enter a valid email address.', 'error');
+      return;
+    }
+
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.innerHTML;
     btn.innerHTML = '<span>Sending...</span>';

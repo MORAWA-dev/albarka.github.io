@@ -31,7 +31,7 @@ const translations = {
     'metrics.models': 'ML Models Deployed',
     'metrics.spaces': 'HuggingFace Spaces',
     'metrics.certs': 'AI Certifications',
-    'metrics.papers': 'Research Papers',
+    'metrics.papers': 'M.Sc. Thesis',
     
     // Sections
     'section.building': '🔥 Currently Building',
@@ -89,7 +89,7 @@ const translations = {
     'metrics.models': 'Modèles ML Déployés',
     'metrics.spaces': 'Espaces HuggingFace',
     'metrics.certs': 'Certifications IA',
-    'metrics.papers': 'Articles de Recherche',
+    'metrics.papers': 'Mémoire de Master',
     
     // Sections
     'section.building': '🔥 En Construction',

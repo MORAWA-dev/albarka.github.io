@@ -12,7 +12,7 @@
 - **Email:** hello@agenticbrahim.dev (forwards to ibrakabore01@gmail.com)
 - **Education:** M.Sc. Geomatics & Environment, FST Béni Mellal (Morocco)
 - **Focus:** AI for African Agriculture & Mining, LLMs, RAG, Geospatial AI, Multi-Agent Systems
-- **Current:** PhD Candidate in Mining Engineering — African Mining Digitalization
+- **Current:** M.Sc. Graduate, seeking a PhD position (Fall 2026) — Geospatial AI & Remote Sensing
 
 ### Social Accounts
 
@@ -314,7 +314,7 @@ Celebration particle system:
 - Space URL: `https://kimcomehome-aibrahim.hf.space`
 
 ### 13. Impact Metrics
-- Homepage displays: 5+ ML Models, 3 HuggingFace Spaces, 10+ AI Certifications, 2 Research Papers
+- Homepage displays: 3 ML Models, 2 HuggingFace Spaces, 10+ AI Certifications, 1 M.Sc. Thesis
 
 ### 14. GitHub Activity Widget
 - Contribution chart image from `https://ghchart.rshah.org/1a1a1a/MORAWA-dev`

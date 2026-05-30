@@ -313,7 +313,7 @@ Celebration particle system:
 - Space URL: `https://kimcomehome-aibrahim.hf.space`
 
 ### 13. Impact Metrics
-- Homepage displays: 3 ML Models, 2 HuggingFace Spaces, 10+ AI Certifications, 1 M.Sc. Thesis
+- Homepage displays: 3 ML Models, 2 HuggingFace Spaces, 5 HuggingFace Datasets, 1 M.Sc. Thesis
 
 ### 14. GitHub Activity Widget
 - Contribution chart image from `https://ghchart.rshah.org/1a1a1a/MORAWA-dev`

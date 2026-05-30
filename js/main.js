@@ -19,7 +19,32 @@ document.addEventListener('DOMContentLoaded', function() {
   initContactForm();
   initTypewriter();
   initScrollReveal();
+  initNewsletterForm();
+  initResumePrint();
 });
+
+/* Newsletter Form (moved out of inline onsubmit for a strict CSP) */
+function initNewsletterForm() {
+  const form = document.getElementById('newsletter-form');
+  if (!form) return;
+
+  form.addEventListener('submit', function() {
+    // Open Buttondown in the popup window the form targets, then let the
+    // native submission proceed into that window.
+    window.open('https://buttondown.com/albarka007', 'popupwindow');
+    document.dispatchEvent(new CustomEvent('newsletter-subscribed'));
+  });
+}
+
+/* Resume Print (moved out of inline onclick for a strict CSP) */
+function initResumePrint() {
+  const btn = document.getElementById('resume-print-btn');
+  if (!btn) return;
+
+  btn.addEventListener('click', function() {
+    window.print();
+  });
+}
 
 /* Typewriter Effect */
 function initTypewriter() {

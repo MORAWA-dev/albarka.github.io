@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cloud.umami.is; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://cdn.jsdelivr.net https://huggingface.co https://ghchart.rshah.org; frame-src https://*.hf.space https://www.youtube.com https://huggingface.co; connect-src 'self' https://cloud.umami.is https://formspree.io; form-action 'self' https://formspree.io https://buttondown.com; base-uri 'self'; object-src 'none'">
   <title>Agentic Brahim - Builder & AI Enthusiast</title>
   <meta name="description" content="M.Sc. Geomatics & Environment. AI Engineer building LLMs, autonomous agents, and geospatial AI for African Agriculture & Mining. Seeking a PhD position (Fall 2026).">
   <meta name="keywords" content="AI Engineer, Geomatics, Remote Sensing, LLM, Machine Learning, Geospatial AI, Africa">
@@ -389,10 +390,10 @@
       <h2 data-i18n="section.newsletter">📬 Stay in the Loop</h2>
       <p data-i18n="newsletter.desc">Get occasional updates on AI, agents, and building for Africa. No spam, unsubscribe anytime.</p>
       <form
+        id="newsletter-form"
         action="https://buttondown.com/api/emails/embed-subscribe/albarka007"
         method="post"
         target="popupwindow"
-        onsubmit="window.open('https://buttondown.com/albarka007', 'popupwindow'); document.dispatchEvent(new CustomEvent('newsletter-subscribed')); return true;"
         class="newsletter-form"
       >
         <input type="email" name="email" placeholder="you@example.com" required />

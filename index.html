@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cloud.umami.is; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://cdn.jsdelivr.net https://huggingface.co https://ghchart.rshah.org; frame-src https://*.hf.space https://www.youtube.com https://huggingface.co; connect-src 'self' https://cloud.umami.is https://formspree.io; form-action 'self' https://formspree.io https://buttondown.com; base-uri 'self'; object-src 'none'">
   <title>Agentic Brahim - Builder & AI Enthusiast</title>
   <meta name="description" content="M.Sc. Geomatics & Environment. AI Engineer building LLMs, autonomous agents, and geospatial AI for African Agriculture & Mining. Seeking a PhD position (Fall 2026).">
   <meta name="keywords" content="AI Engineer, Geomatics, Remote Sensing, LLM, Machine Learning, Geospatial AI, Africa">
@@ -58,8 +59,7 @@
       "https://github.com/MORAWA-dev",
       "https://huggingface.co/kimcomehome",
       "https://linkedin.com/in/ibrahimkabore",
-      "https://www.youtube.com/@geomatics101k",
-      "https://researchgate.net/profile/Ibrahim-Kabore"
+      "https://www.youtube.com/@geomatics101k"
     ],
     "alumniOf": {
       "@type": "EducationalOrganization",
@@ -128,7 +128,7 @@
       <a href="assets/docs/Ibrahim_Kabore_CV.pdf" download class="contact-btn" style="margin-left: 0.5rem; background: var(--accent-yellow);">
         📄 Download CV
       </a>
-      <a href="https://calendly.com/ibrakabore01" target="_blank" class="contact-btn" style="margin-left: 0.5rem; background: var(--accent-green);">
+      <a href="https://calendly.com/ibrakabore01" target="_blank" rel="noopener noreferrer" class="contact-btn" style="margin-left: 0.5rem; background: var(--accent-green);">
         📅 Book a Call
       </a>
     </div>
@@ -147,9 +147,6 @@
       <a href="https://www.youtube.com/@geomatics101k" target="_blank" rel="noopener" title="YouTube">
         <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube" loading="lazy">
       </a>
-      <a href="https://researchgate.net/profile/Ibrahim-Kabore" target="_blank" rel="noopener" title="ResearchGate">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/researchgate.svg" alt="ResearchGate" loading="lazy">
-      </a>
     </div>
 
     <!-- Quick Actions -->
@@ -158,7 +155,7 @@
         <span class="icon">🤖</span>
         AI Projects
       </a>
-      <a href="https://huggingface.co/kimcomehome" target="_blank" class="action-btn btn-yellow">
+      <a href="https://huggingface.co/kimcomehome" target="_blank" rel="noopener noreferrer" class="action-btn btn-yellow">
         <span class="icon">🤗</span>
         HuggingFace
       </a>
@@ -193,8 +190,8 @@
         <span class="metric-label" data-i18n="metrics.spaces">HuggingFace Spaces</span>
       </div>
       <div class="metric-card">
-        <span class="metric-number">10+</span>
-        <span class="metric-label" data-i18n="metrics.certs">AI Certifications</span>
+        <span class="metric-number">5</span>
+        <span class="metric-label" data-i18n="metrics.datasets">HuggingFace Datasets</span>
       </div>
       <div class="metric-card">
         <span class="metric-number">1</span>
@@ -205,12 +202,13 @@
     <!-- Currently Building -->
     <h2 class="section-title" data-i18n="section.building">🔥 Currently Building</h2>
     <div class="feature-card card-orange" style="padding: 1.5rem; border-left: 4px solid var(--accent-orange);">
-      <h3 style="display: flex; align-items: center; gap: 0.5rem;">
+      <h3 style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
         <span style="animation: pulse 2s infinite;">🚀</span>
         Agentic AI Chatbot for African Agriculture
+        <span class="tech-tag" style="background: var(--accent-yellow);">In Progress</span>
       </h3>
       <p style="margin-top: 0.5rem; color: var(--text-gray);">
-        Multi-agent system using RAG, QLoRA fine-tuning & CrewAI to provide context-aware agronomic advice to farmers.
+        A work-in-progress learning project: building a multi-agent system that explores RAG, QLoRA fine-tuning, and CrewAI orchestration to give farmers context-aware agronomic advice.
       </p>
       <div class="tech-tags" style="margin-top: 1rem;">
         <span class="tech-tag ai">RAG</span>
@@ -224,17 +222,17 @@
     <!-- Featured Projects -->
     <h2 class="section-title" data-i18n="section.featured">⭐ Featured Work</h2>
     <div class="cards-grid">
-      <a href="https://huggingface.co/kimcomehome/segformer-b0-tileforge-demo-v1" target="_blank" class="feature-card card-green">
+      <a href="https://huggingface.co/kimcomehome/segformer-b0-tileforge-demo-v1" target="_blank" rel="noopener noreferrer" class="feature-card card-green">
         <span class="arrow">↗</span>
         <h3>SegFormer TileForge</h3>
-        <p>Vision Transformer for geospatial tile segmentation</p>
+        <p>Demo: SegFormer-B0 applied to Sentinel-2 tiles for land-cover segmentation</p>
       </a>
       <a href="pages/case-study-aibrahim.html" class="feature-card card-purple">
         <span class="arrow">↗</span>
         <h3>AIbrahim</h3>
         <p>AI-powered portfolio assistant</p>
       </a>
-      <a href="https://huggingface.co/kimcomehome/Llama-3-ELI5-Instruct" target="_blank" class="feature-card card-pink">
+      <a href="https://huggingface.co/kimcomehome/Llama-3-ELI5-Instruct" target="_blank" rel="noopener noreferrer" class="feature-card card-pink">
         <span class="arrow">↗</span>
         <h3>Llama-3-ELI5</h3>
         <p>Fine-tuned for simple explanations</p>
@@ -244,15 +242,15 @@
     <!-- HuggingFace Stats -->
     <h2 class="section-title">🤗 HuggingFace Highlights</h2>
     <div class="list-items">
-      <a href="https://huggingface.co/kimcomehome/segformer-b0-tileforge-demo-v1" target="_blank" class="list-item" style="border-left: 4px solid var(--accent-green);">
+      <a href="https://huggingface.co/kimcomehome/segformer-b0-tileforge-demo-v1" target="_blank" rel="noopener noreferrer" class="list-item" style="border-left: 4px solid var(--accent-green);">
         <span class="item-icon" style="background: var(--accent-green)">🗺️</span>
         <div class="item-content">
-          <div class="item-title">SegFormer TileForge <span class="item-tag new">New</span></div>
-          <div class="item-desc">Vision Transformer for geospatial tile segmentation</div>
+          <div class="item-title">SegFormer TileForge <span class="item-tag new">Demo</span></div>
+          <div class="item-desc">Demo: SegFormer-B0 on Sentinel-2 tiles for land-cover segmentation</div>
         </div>
         <span class="item-arrow">→</span>
       </a>
-      <a href="https://huggingface.co/spaces/kimcomehome/AIbrahim" target="_blank" class="list-item">
+      <a href="https://huggingface.co/spaces/kimcomehome/AIbrahim" target="_blank" rel="noopener noreferrer" class="list-item">
         <span class="item-icon" style="background: var(--accent-purple)">💬</span>
         <div class="item-content">
           <div class="item-title">AIbrahim <span class="item-tag">Space</span></div>
@@ -260,7 +258,7 @@
         </div>
         <span class="item-arrow">→</span>
       </a>
-      <a href="https://huggingface.co/datasets/kimcomehome/tileforge-s2-dw-demo-v1" target="_blank" class="list-item" style="border-left: 4px solid var(--accent-orange);">
+      <a href="https://huggingface.co/datasets/kimcomehome/tileforge-s2-dw-demo-v1" target="_blank" rel="noopener noreferrer" class="list-item" style="border-left: 4px solid var(--accent-orange);">
         <span class="item-icon" style="background: var(--accent-orange)">🛰️</span>
         <div class="item-content">
           <div class="item-title">TileForge S2-DW <span class="item-tag new">New</span></div>
@@ -268,7 +266,7 @@
         </div>
         <span class="item-arrow">→</span>
       </a>
-      <a href="https://huggingface.co/kimcomehome/Llama-3-ELI5-Instruct" target="_blank" class="list-item">
+      <a href="https://huggingface.co/kimcomehome/Llama-3-ELI5-Instruct" target="_blank" rel="noopener noreferrer" class="list-item">
         <span class="item-icon" style="background: var(--accent-yellow)">🧠</span>
         <div class="item-content">
           <div class="item-title">Llama-3-ELI5-Instruct <span class="item-tag">Model</span></div>
@@ -276,7 +274,7 @@
         </div>
         <span class="item-arrow">→</span>
       </a>
-      <a href="https://huggingface.co/datasets/kimcomehome/system-prompts-multi-agent-systems" target="_blank" class="list-item">
+      <a href="https://huggingface.co/datasets/kimcomehome/system-prompts-multi-agent-systems" target="_blank" rel="noopener noreferrer" class="list-item">
         <span class="item-icon" style="background: var(--accent-blue)">📊</span>
         <div class="item-content">
           <div class="item-title">Multi-Agent System Prompts <span class="item-tag">Dataset</span></div>
@@ -310,7 +308,7 @@
       <div class="timeline-item">
         <span class="timeline-date">Feb 2024 — Jul 2025</span>
         <div class="timeline-content">
-          <h3>Remote Sensing Researcher</h3>
+          <h3>Remote Sensing — Independent Research</h3>
           <p>Radar-based crop monitoring using Google Earth Engine, Sentinel-1 SAR, and climate data integration.</p>
         </div>
       </div>
@@ -393,12 +391,13 @@
       <h2 data-i18n="section.newsletter">📬 Stay in the Loop</h2>
       <p data-i18n="newsletter.desc">Get occasional updates on AI, agents, and building for Africa. No spam, unsubscribe anytime.</p>
       <form
+        id="newsletter-form"
         action="https://buttondown.com/api/emails/embed-subscribe/albarka007"
         method="post"
         target="popupwindow"
-        onsubmit="window.open('https://buttondown.com/albarka007', 'popupwindow'); document.dispatchEvent(new CustomEvent('newsletter-subscribed')); return true;"
         class="newsletter-form"
       >
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
         <input type="email" name="email" placeholder="you@example.com" required />
         <button type="submit" data-i18n="newsletter.btn">Subscribe</button>
       </form>
@@ -410,6 +409,7 @@
       <h2 data-i18n="section.contact">Get in Touch</h2>
       <p class="subtitle" data-i18n="contact.subtitle">Have a question or want to work together?</p>
       <form class="contact-form" id="contact-form" action="https://formspree.io/f/mbdgezge" method="POST">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
         <label for="name" class="sr-only">Your Name</label>
         <input type="text" id="name" name="name" placeholder="Your Name" data-i18n="contact.name" required>
         

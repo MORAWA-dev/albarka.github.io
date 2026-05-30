@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cloud.umami.is; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://cdn.jsdelivr.net https://huggingface.co https://ghchart.rshah.org; frame-src https://*.hf.space https://www.youtube.com https://huggingface.co; connect-src 'self' https://cloud.umami.is https://formspree.io; form-action 'self' https://formspree.io https://buttondown.com; base-uri 'self'; object-src 'none'">
   <meta name="description" content="Ibrahim Kabore (Agentic Brahim) - Resume / CV - AI Engineer & Geomatics Specialist">
   <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
   <title>Resume | Agentic Brahim</title>
@@ -30,7 +31,7 @@
       margin-bottom: 1.5rem;
     }
     
-    .resume-header h1 {
+    .resume-header h2 {
       font-size: 2rem;
       margin-bottom: 0.5rem;
     }
@@ -207,7 +208,7 @@
 
     <!-- Download Actions -->
     <div class="download-actions">
-      <button onclick="window.print()" class="download-btn">
+      <button id="resume-print-btn" class="download-btn">
         📥 Download PDF
       </button>
       <a href="mailto:hello@agenticbrahim.dev?subject=Hiring Inquiry" class="download-btn secondary">
@@ -218,13 +219,13 @@
     <!-- Resume Content -->
     <div class="resume-container">
       <div class="resume-header">
-        <h1>Ibrahim Kabore</h1>
+        <h2>Ibrahim Kabore</h2>
         <div class="resume-contact">
           <span>📍 Ben Guerir, Morocco</span>
           <a href="mailto:hello@agenticbrahim.dev">📧 hello@agenticbrahim.dev</a>
-          <a href="https://agenticbrahim.dev" target="_blank">🌐 agenticbrahim.dev</a>
-          <a href="https://linkedin.com/in/ibrahimkabore" target="_blank">💼 LinkedIn</a>
-          <a href="https://github.com/MORAWA-dev" target="_blank">🐙 GitHub</a>
+          <a href="https://agenticbrahim.dev" target="_blank" rel="noopener noreferrer">🌐 agenticbrahim.dev</a>
+          <a href="https://linkedin.com/in/ibrahimkabore" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+          <a href="https://github.com/MORAWA-dev" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
         </div>
       </div>
 
@@ -277,7 +278,7 @@
 
         <div class="resume-item">
           <div class="resume-item-header">
-            <span class="resume-item-title">Remote Sensing Researcher (Radar-Based Monitoring)</span>
+            <span class="resume-item-title">Remote Sensing — Independent Research (Radar-Based Monitoring)</span>
             <span class="resume-item-date">Feb 2024 – Jul 2025</span>
           </div>
           <div class="resume-item-subtitle">Research Project (Sidi Bennour Region) · Morocco</div>
@@ -296,13 +297,13 @@
         <div class="resume-item">
           <div class="resume-item-header">
             <span class="resume-item-title">Agentic AI Chatbot for Agriculture</span>
-            <span class="resume-item-date">2025</span>
+            <span class="resume-item-date">2025 · In Progress</span>
           </div>
           <div class="resume-item-subtitle">Python, RAG, QLoRA, CrewAI</div>
           <ul>
-            <li>Developed AI-powered agent using RAG to assist farmers with context-aware agronomic advice</li>
-            <li>Implemented fine-tuning of open-source models (Llama) using QLoRA for domain-specific accuracy</li>
-            <li>Orchestrated multi-agent systems using CrewAI and Nvidia NeMo for complex query routing</li>
+            <li>Building an agent that uses RAG to assist farmers with context-aware agronomic advice</li>
+            <li>Experimenting with QLoRA fine-tuning of open-source models (Llama) for domain-specific accuracy</li>
+            <li>Prototyping multi-agent orchestration with CrewAI and Nvidia NeMo for query routing</li>
           </ul>
         </div>
 

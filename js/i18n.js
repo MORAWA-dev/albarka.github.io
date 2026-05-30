@@ -31,6 +31,7 @@ const translations = {
     'metrics.models': 'ML Models Deployed',
     'metrics.spaces': 'HuggingFace Spaces',
     'metrics.certs': 'AI Certifications',
+    'metrics.datasets': 'HuggingFace Datasets',
     'metrics.papers': 'M.Sc. Thesis',
     
     // Sections
@@ -89,6 +90,7 @@ const translations = {
     'metrics.models': 'Modèles ML Déployés',
     'metrics.spaces': 'Espaces HuggingFace',
     'metrics.certs': 'Certifications IA',
+    'metrics.datasets': 'Jeux de données HuggingFace',
     'metrics.papers': 'Mémoire de Master',
     
     // Sections

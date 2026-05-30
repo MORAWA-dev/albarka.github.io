@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cloud.umami.is; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://cdn.jsdelivr.net https://huggingface.co https://ghchart.rshah.org; frame-src https://*.hf.space https://www.youtube.com https://huggingface.co; connect-src 'self' https://cloud.umami.is https://formspree.io; form-action 'self' https://formspree.io https://buttondown.com; base-uri 'self'; object-src 'none'">
   <title>Speaking & Talks - Agentic Brahim</title>
   <meta name="description" content="Conference talks, YouTube videos, and presentations on AI, Geomatics, and Mining Engineering by Ibrahim Kabore.">
   
@@ -31,8 +32,8 @@
     .speaking-hero {
       text-align: center;
       padding: 4rem 2rem;
-      background: linear-gradient(135deg, var(--accent) 0%, #8b7cf7 100%);
-      color: white;
+      background: linear-gradient(135deg, var(--accent-purple) 0%, #8b7cf7 100%);
+      color: var(--text-dark);
       border-radius: 20px;
       margin-bottom: 3rem;
     }
@@ -117,10 +118,10 @@
     }
     
     .video-card {
-      background: var(--surface);
+      background: var(--bg-white);
       border-radius: 16px;
       overflow: hidden;
-      border: 2px solid var(--border);
+      border: 2px solid var(--border-dark);
       transition: transform 0.2s, box-shadow 0.2s;
     }
     
@@ -150,7 +151,7 @@
       font-size: 1.1rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
-      color: var(--text-main);
+      color: var(--text-dark);
     }
     
     .video-meta {
@@ -176,20 +177,20 @@
       grid-template-columns: auto 1fr auto;
       gap: 1.5rem;
       padding: 1.5rem;
-      background: var(--surface);
-      border: 2px solid var(--border);
+      background: var(--bg-white);
+      border: 2px solid var(--border-dark);
       border-radius: 16px;
       align-items: center;
       transition: border-color 0.2s;
     }
     
     .talk-card:hover {
-      border-color: var(--accent);
+      border-color: var(--accent-purple);
     }
     
     .talk-date {
-      background: var(--accent);
-      color: white;
+      background: var(--accent-purple);
+      color: var(--text-dark);
       padding: 0.75rem 1rem;
       border-radius: 10px;
       text-align: center;
@@ -215,7 +216,7 @@
     .talk-info h3 {
       font-size: 1.1rem;
       margin-bottom: 0.5rem;
-      color: var(--text-main);
+      color: var(--text-dark);
     }
     
     .talk-event {
@@ -239,18 +240,18 @@
     
     .talk-link {
       padding: 0.5rem 1rem;
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-dark);
       border-radius: 8px;
       font-size: 0.85rem;
       text-decoration: none;
-      color: var(--text-main);
+      color: var(--text-dark);
       transition: all 0.2s;
     }
     
     .talk-link:hover {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
+      background: var(--accent-purple);
+      color: var(--text-dark);
+      border-color: var(--accent-purple);
     }
     
     /* Upcoming Badge */
@@ -267,8 +268,8 @@
     .speaking-cta {
       text-align: center;
       padding: 3rem 2rem;
-      background: var(--surface);
-      border: 2px solid var(--border);
+      background: var(--bg-white);
+      border: 2px solid var(--border-dark);
       border-radius: 20px;
     }
     
@@ -301,8 +302,8 @@
     }
     
     .cta-btn.primary {
-      background: var(--accent);
-      color: white;
+      background: var(--accent-purple);
+      color: var(--text-dark);
     }
     
     .cta-btn.primary:hover {
@@ -311,13 +312,13 @@
     }
     
     .cta-btn.secondary {
-      border: 2px solid var(--border);
-      color: var(--text-main);
+      border: 2px solid var(--border-dark);
+      color: var(--text-dark);
     }
     
     .cta-btn.secondary:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: var(--accent-purple);
+      color: var(--accent-purple);
     }
     
     /* Responsive */
@@ -558,7 +559,7 @@
 
   <!-- Footer -->
   <footer class="page-footer">
-    <p>© 2024 Agentic Brahim. Built with ❤️ and 🤖</p>
+    <p>© 2026 Agentic Brahim. Built with ❤️ and 🤖</p>
   </footer>
 
   <script src="../js/main.js"></script>

@@ -22,7 +22,6 @@
 | HuggingFace   | [kimcomehome](https://huggingface.co/kimcomehome)     |
 | LinkedIn      | [ibrahimkabore](https://linkedin.com/in/ibrahimkabore)|
 | YouTube       | [@geomatics101k](https://youtube.com/@geomatics101k) |
-| ResearchGate  | [Ibrahim-Kabore](https://researchgate.net/profile/Ibrahim-Kabore) |
 | Calendly      | [ibrakabore01](https://calendly.com/ibrakabore01)     |
 
 ---
